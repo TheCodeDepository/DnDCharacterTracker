@@ -52,10 +52,6 @@ namespace AddInventoryForm
         }
 
 
-
-
-
-
         private void Inventory_Load(object sender, EventArgs e)
         {
             //LoadList();
@@ -106,10 +102,9 @@ namespace AddInventoryForm
         {
             invWeapPan1.testButton();
         }
-
-
         private void AddInventoryBtn_Click(object sender, EventArgs e)
         {
+            SaveButton.Enabled = true;
             if (InvTabControl.SelectedTab == WeapTab)
             {
                 invWeapPan1.EnableDisable();
@@ -117,10 +112,12 @@ namespace AddInventoryForm
         }
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (InvTabControl.SelectedTab == WeapTab)
+            if (currTab == Tab.Weap)
             {
-                invWeapPan1.SaveRecord();
-                
+                if (invWeapPan1.SaveRecord())
+                {
+                    SaveButton.Enabled = false;
+                }
             }
         }
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -131,6 +128,17 @@ namespace AddInventoryForm
         private void CloseBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (currTab == Tab.Weap)
+            {
+
+                invWeapPan1.EditRecord();
+                        
+             
+            }
         }
 
         //Functional Methods

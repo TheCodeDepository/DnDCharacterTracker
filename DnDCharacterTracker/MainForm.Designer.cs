@@ -1131,9 +1131,9 @@ namespace DnDCharacterTracker
             this.LevelingGrp.AutoSize = true;
             this.LevelingGrp.Controls.Add(this.panel2);
             this.LevelingGrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LevelingGrp.Location = new System.Drawing.Point(772, 22);
+            this.LevelingGrp.Location = new System.Drawing.Point(803, 22);
             this.LevelingGrp.Name = "LevelingGrp";
-            this.LevelingGrp.Size = new System.Drawing.Size(405, 331);
+            this.LevelingGrp.Size = new System.Drawing.Size(374, 331);
             this.LevelingGrp.TabIndex = 16;
             this.LevelingGrp.TabStop = false;
             this.LevelingGrp.Text = "Combat Results";
@@ -1153,7 +1153,7 @@ namespace DnDCharacterTracker
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 22);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(399, 306);
+            this.panel2.Size = new System.Drawing.Size(368, 306);
             this.panel2.TabIndex = 0;
             // 
             // GoldTotal
@@ -1179,7 +1179,7 @@ namespace DnDCharacterTracker
             // 
             this.ViewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.ViewButton.Location = new System.Drawing.Point(318, 61);
+            this.ViewButton.Location = new System.Drawing.Point(287, 61);
             this.ViewButton.Margin = new System.Windows.Forms.Padding(2);
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.Size = new System.Drawing.Size(72, 23);
@@ -1192,7 +1192,7 @@ namespace DnDCharacterTracker
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.RemoveButton.Location = new System.Drawing.Point(318, 34);
+            this.RemoveButton.Location = new System.Drawing.Point(287, 34);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(72, 23);
@@ -1205,7 +1205,7 @@ namespace DnDCharacterTracker
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.AddButton.Location = new System.Drawing.Point(318, 7);
+            this.AddButton.Location = new System.Drawing.Point(287, 7);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(72, 23);
@@ -1249,7 +1249,7 @@ namespace DnDCharacterTracker
             this.LevelingList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.LevelingList.Location = new System.Drawing.Point(3, 90);
             this.LevelingList.Name = "LevelingList";
-            this.LevelingList.Size = new System.Drawing.Size(393, 213);
+            this.LevelingList.Size = new System.Drawing.Size(362, 213);
             this.LevelingList.TabIndex = 16;
             this.LevelingList.UseCompatibleStateImageBehavior = false;
             this.LevelingList.View = System.Windows.Forms.View.Details;
@@ -1301,9 +1301,9 @@ namespace DnDCharacterTracker
             this.TraitsGrp.AutoSize = true;
             this.TraitsGrp.Controls.Add(this.panel19);
             this.TraitsGrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TraitsGrp.Location = new System.Drawing.Point(363, 22);
+            this.TraitsGrp.Location = new System.Drawing.Point(368, 23);
             this.TraitsGrp.Name = "TraitsGrp";
-            this.TraitsGrp.Size = new System.Drawing.Size(403, 331);
+            this.TraitsGrp.Size = new System.Drawing.Size(429, 331);
             this.TraitsGrp.TabIndex = 17;
             this.TraitsGrp.TabStop = false;
             this.TraitsGrp.Text = "Traits";
@@ -1318,14 +1318,14 @@ namespace DnDCharacterTracker
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(3, 22);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(397, 306);
+            this.panel19.Size = new System.Drawing.Size(423, 306);
             this.panel19.TabIndex = 1;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.button3.Location = new System.Drawing.Point(317, 60);
+            this.button3.Location = new System.Drawing.Point(343, 60);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(72, 23);
@@ -1348,7 +1348,7 @@ namespace DnDCharacterTracker
             this.TraitsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.TraitsList.Location = new System.Drawing.Point(2, 89);
             this.TraitsList.Name = "TraitsList";
-            this.TraitsList.Size = new System.Drawing.Size(393, 214);
+            this.TraitsList.Size = new System.Drawing.Size(419, 214);
             this.TraitsList.TabIndex = 32;
             this.TraitsList.UseCompatibleStateImageBehavior = false;
             this.TraitsList.View = System.Windows.Forms.View.Details;
@@ -1376,7 +1376,7 @@ namespace DnDCharacterTracker
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.button4.Location = new System.Drawing.Point(317, 33);
+            this.button4.Location = new System.Drawing.Point(343, 33);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(72, 23);
@@ -1388,7 +1388,7 @@ namespace DnDCharacterTracker
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.button5.Location = new System.Drawing.Point(317, 6);
+            this.button5.Location = new System.Drawing.Point(343, 6);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(72, 23);
@@ -2279,7 +2279,7 @@ namespace DnDCharacterTracker
             this.skillList1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.skillList1.Location = new System.Drawing.Point(0, 0);
             this.skillList1.Name = "skillList1";
-            this.skillList1.Size = new System.Drawing.Size(420, 373);
+            this.skillList1.Size = new System.Drawing.Size(420, 364);
             this.skillList1.TabIndex = 22;
             // 
             // groupBox1
@@ -2316,10 +2316,10 @@ namespace DnDCharacterTracker
             // inventoryPreview1
             // 
             this.inventoryPreview1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.inventoryPreview1.Location = new System.Drawing.Point(5, 22);
+            this.inventoryPreview1.Location = new System.Drawing.Point(1, 22);
             this.inventoryPreview1.Margin = new System.Windows.Forms.Padding(4);
             this.inventoryPreview1.Name = "inventoryPreview1";
-            this.inventoryPreview1.Size = new System.Drawing.Size(364, 364);
+            this.inventoryPreview1.Size = new System.Drawing.Size(370, 370);
             this.inventoryPreview1.TabIndex = 0;
             // 
             // MainForm

@@ -22,7 +22,7 @@ namespace AddInventoryForm
 
 
         //Fields
-        private WeaponItem CurrentRecord { get; set; }
+        private int CurrentRecord { get; set; }
 
         public List<GenericValues> InventoryList { get; set; }
 
@@ -36,6 +36,11 @@ namespace AddInventoryForm
 
         private void WeaponListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadSelectedRecord();
+        }
+
+        private void LoadSelectedRecord()
+        {
             int temp = -1;
             foreach (var item in WeaponListBox.SelectedIndices)
             {
@@ -47,9 +52,10 @@ namespace AddInventoryForm
 
 
                 LoadListItem((WeaponItem)q);
-
+                CurrentRecord = q.Key;
             }
         }
+
 
         private void TypeOfWeap_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -98,28 +104,29 @@ namespace AddInventoryForm
                 MessageBox.Show("Please Ensure you fill all Mandatory Fields");
                 return false;
             }
-            if (CurrentRecord != null)
-            {
-                CurrentRecord = new WeaponItem(ItemIDTb.Text, CostTB.Text.ToInt(), WeightTb.Text.ToInt(), NotesTb.Text, DamageTb.Text, CriticalTb.Text, RangeTb.Text.ToInt(), UpgradesTb.Text);
-            }
 
-            var test = new WeaponItem(ItemIDTb.Text, CostTB.Text.ToInt(), WeightTb.Text.ToInt(), NotesTb.Text, DamageTb.Text, CriticalTb.Text, RangeTb.Text.ToInt(), UpgradesTb.Text);
-            Storage.Storage.InventoryList.Add(test);
+            Storage.Storage.InventoryList.Add(new WeaponItem(ItemIDTb.Text, CostTB.Text.ToInt(), WeightTb.Text.ToInt(), NotesTb.Text, DamageTb.Text, CriticalTb.Text, RangeTb.Text.ToInt(), UpgradesTb.Text));
             LoadList();
+            ClearFields();
+            EnableDisable();
+            return true;
+        }
+
+        private void ClearFields()
+        {
             foreach (var item in panel2.Controls)
             {
-                var t = item as TextBox;
-                if (t != null)
+                var textBoxs = item as TextBox;
+                if (textBoxs != null)
                 {
-                    t.Clear();
+                    textBoxs.Clear();
                 }
                 else
                 {
-                    ComboBox p = (ComboBox)item;
-                    p.ResetText();
+                    ComboBox CboBox = (ComboBox)item;
+                    CboBox.ResetText();
                 }
             }
-            return true;
         }
 
         public void RemoveRecord()
@@ -138,9 +145,9 @@ namespace AddInventoryForm
             throw new NotImplementedException();
         }
 
-        public void EditRecord()
+        public void EditRecord(WeaponItem I)
         {
-            throw new NotImplementedException();
+            LoadSelectedRecord();
         }
 
         int count = 0;

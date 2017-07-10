@@ -69,10 +69,10 @@
     <Compile Include="InventoryUserControls\InvWeap.Designer.cs">
       <DependentUpon>InvWeap.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvWeapPan.cs">
+    <Compile Include="InventoryUserControls\InvWeapPan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InvWeapPan.Designer.cs">
+    <Compile Include="InventoryUserControls\InvWeapPan.Designer.cs">
       <DependentUpon>InvWeapPan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -86,7 +86,7 @@
     <EmbeddedResource Include="InventoryUserControls\InventoryPanelMisc.resx">
       <DependentUpon>InventoryPanelMisc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InvWeapPan.resx">
+    <EmbeddedResource Include="InventoryUserControls\InvWeapPan.resx">
       <DependentUpon>InvWeapPan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
