@@ -338,6 +338,7 @@
             this.EditBtn.TabIndex = 42;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // CloseBtn
             // 
@@ -439,7 +440,6 @@
             // 
             // invWeapPan1
             // 
-            this.invWeapPan1.InventoryList = null;
             this.invWeapPan1.Location = new System.Drawing.Point(4, 4);
             this.invWeapPan1.Name = "invWeapPan1";
             this.invWeapPan1.Size = new System.Drawing.Size(654, 485);
