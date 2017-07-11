@@ -45,49 +45,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonControl.Designer.cs">
+      <DependentUpon>ButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IButtons.cs" />
     <Compile Include="InventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InventoryForm.Designer.cs">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryUserControls\InventoryPanalArmor.cs">
+    <Compile Include="InventoryUserControls\ArmorInvControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InventoryUserControls\InventoryPanalArmor.Designer.cs">
-      <DependentUpon>InventoryPanalArmor.cs</DependentUpon>
+    <Compile Include="InventoryUserControls\ArmorInvControl.Designer.cs">
+      <DependentUpon>ArmorInvControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryUserControls\InventoryPanelMisc.cs">
+    <Compile Include="InventoryUserControls\MiscInvControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InventoryUserControls\InventoryPanelMisc.Designer.cs">
-      <DependentUpon>InventoryPanelMisc.cs</DependentUpon>
+    <Compile Include="InventoryUserControls\MiscInvControl.Designer.cs">
+      <DependentUpon>MiscInvControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="InventoryUserControls\InvWeap.cs">
+    <Compile Include="InventoryUserControls\WeaponInvControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="InventoryUserControls\InvWeap.Designer.cs">
-      <DependentUpon>InvWeap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InventoryUserControls\InvWeapPan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InventoryUserControls\InvWeapPan.Designer.cs">
-      <DependentUpon>InvWeapPan.cs</DependentUpon>
+    <Compile Include="InventoryUserControls\WeaponInvControl.Designer.cs">
+      <DependentUpon>WeaponInvControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ButtonControl.resx">
+      <DependentUpon>ButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InventoryUserControls\InventoryPanalArmor.resx">
-      <DependentUpon>InventoryPanalArmor.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryUserControls\ArmorInvControl.resx">
+      <DependentUpon>ArmorInvControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InventoryUserControls\InventoryPanelMisc.resx">
-      <DependentUpon>InventoryPanelMisc.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryUserControls\MiscInvControl.resx">
+      <DependentUpon>MiscInvControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InventoryUserControls\InvWeapPan.resx">
-      <DependentUpon>InvWeapPan.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryUserControls\WeaponInvControl.resx">
+      <DependentUpon>WeaponInvControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

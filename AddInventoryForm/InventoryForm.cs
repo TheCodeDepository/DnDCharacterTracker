@@ -15,70 +15,42 @@ namespace AddInventoryForm
         Weap,Armor,Misc
     }
 
-    
     public partial class InventoryForm : Form
     {
         public InventoryForm()
         {
             InitializeComponent();
         }
-         
+        private static TabControl Instance;
 
-        private Tab currTab;
-
-        public Tab CurrTab
+        public static IButtons CurrentPanel
         {
             get
             {
-                if (InvTabControl.SelectedTab == WeapTab)
-                {
-                    return Tab.Weap;
-
-                }
-                else if (InvTabControl.SelectedTab == ArmourTab)
-                {
-                    return Tab.Armor;
-                }
-                else if (InvTabControl.SelectedTab == MiscTab)
-                {
-                    return Tab.Misc;
-                }
-                return CurrTab;
+                return Instance.SelectedTab;
             }
             set
             {
-                CurrTab = value;
+                Instance.SelectedTab = value;
             }
         }
 
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            //LoadList();
+            Instance = InvTabControl;
 
-        }
-
-        private void WeaponListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
+            invWeapPan1.SubscribeEdit(EditBtnEnb);
+            invWeapPan1.SubscribeSave(SaveBtnEnb);
+            invWeapPan1.SubscribeAdd(AddBtnEnb);
+            invWeapPan1.SubscribeRemove(RemoveBtnEnb);
 
 
-        }
 
-        private void WeaponListBox_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void WeapTypeLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TypeOfWeap_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
+            SaveButton.Enabled = false;
+            RemoveButton.Enabled = !RemoveButton.Enabled;
+            EditBtn.Enabled = !EditBtn.Enabled;
+        }        
 
         private void InvTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -105,9 +77,12 @@ namespace AddInventoryForm
         private void AddInventoryBtn_Click(object sender, EventArgs e)
         {
             SaveButton.Enabled = true;
+            AddInventoryBtn.Enabled = false;
+            EditBtn.Enabled = false;
             if (InvTabControl.SelectedTab == WeapTab)
             {
                 invWeapPan1.EnableDisable();
+                
             }
         }
         private void SaveButton_Click(object sender, EventArgs e)
@@ -119,27 +94,68 @@ namespace AddInventoryForm
                     SaveButton.Enabled = false;
                 }
             }
+            AddInventoryBtn.Enabled = true;
+
         }
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-
+            if (currTab == Tab.Weap)
+            {
+                invWeapPan1.RemoveRecord();
+                RemoveButton.Enabled = true;
+                EditBtn.Enabled = false;
+            }
 
         }
         private void CloseBtn_Click(object sender, EventArgs e)
         {
+            if (currTab == Tab.Weap)
+            {
+                if (invWeapPan1.DataLoss())
+                {
+                    var m = MessageBox.Show("Are you sure you wish to exit without saveing your changes?","Close",MessageBoxButtons.YesNo);
+                    if (m == DialogResult.Yes)
+                    {
+                        Close();
+                    }
+                }
+                Close();
+            }
 
         }
-
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (currTab == Tab.Weap)
             {
-
                 invWeapPan1.EditRecord();
-                        
-             
+                SaveButton.Enabled = true;
+                EditBtn.Enabled = false;
             }
+          
         }
+
+        private void EditBtnEnb(bool b)
+        {
+            EditBtn.Enabled = b;
+
+        }
+        private void SaveBtnEnb(bool b)
+        {
+            SaveButton.Enabled = b;
+
+        }
+        private void AddBtnEnb(bool b)
+        {
+            AddInventoryBtn.Enabled = b;
+
+        }
+        private void RemoveBtnEnb(bool b)
+        {
+            RemoveButton.Enabled = b;
+
+        }
+
+
 
         //Functional Methods
 

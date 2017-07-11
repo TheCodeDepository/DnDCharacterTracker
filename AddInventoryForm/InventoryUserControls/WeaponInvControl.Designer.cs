@@ -188,6 +188,7 @@
             this.WeightTb.Name = "WeightTb";
             this.WeightTb.Size = new System.Drawing.Size(121, 20);
             this.WeightTb.TabIndex = 70;
+            this.WeightTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
             // CriticalTb
             // 
@@ -209,6 +210,7 @@
             this.CostTB.Name = "CostTB";
             this.CostTB.Size = new System.Drawing.Size(121, 20);
             this.CostTB.TabIndex = 67;
+            this.CostTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
             // RangeTb
             // 
@@ -216,6 +218,7 @@
             this.RangeTb.Name = "RangeTb";
             this.RangeTb.Size = new System.Drawing.Size(121, 20);
             this.RangeTb.TabIndex = 66;
+            this.RangeTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
             // UpgradesTb
             // 
@@ -250,6 +253,7 @@
             this.WeaponListBox.UseCompatibleStateImageBehavior = false;
             this.WeaponListBox.View = System.Windows.Forms.View.Details;
             this.WeaponListBox.SelectedIndexChanged += new System.EventHandler(this.WeaponListBox_SelectedIndexChanged);
+            this.WeaponListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WeaponListBox_MouseDoubleClick);
             // 
             // ItemIDColumn
             // 
