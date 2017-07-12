@@ -1,6 +1,6 @@
 ﻿namespace AddInventoryForm
 {
-    partial class InventoryPanalArmor
+    partial class ArmorInvControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,239 +28,237 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WeaponListBox = new System.Windows.Forms.ListView();
+            this.ArmorListBox = new System.Windows.Forms.ListView();
             this.ItemIDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FieldsPanel = new System.Windows.Forms.Panel();
+            this.PenTb = new System.Windows.Forms.TextBox();
             this.NotesTb = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.ItemIDTb = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.WeightTb = new System.Windows.Forms.TextBox();
-            this.CriticalTb = new System.Windows.Forms.TextBox();
-            this.DamageTb = new System.Windows.Forms.TextBox();
-            this.CostTB = new System.Windows.Forms.TextBox();
-            this.RangeTb = new System.Windows.Forms.TextBox();
-            this.UpgradesTb = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TypeOfWeap = new System.Windows.Forms.ComboBox();
-            this.WeapTypeLbl = new System.Windows.Forms.Label();
+            this.ACTb = new System.Windows.Forms.TextBox();
+            this.ValueTb = new System.Windows.Forms.TextBox();
+            this.SpellFailureTb = new System.Windows.Forms.TextBox();
+            this.ArmorGradeCbo = new System.Windows.Forms.ComboBox();
+            this.PenLbl = new System.Windows.Forms.Label();
+            this.NotesLbl = new System.Windows.Forms.Label();
+            this.ItemIDLbl = new System.Windows.Forms.Label();
+            this.SpellFailureLbl = new System.Windows.Forms.Label();
+            this.WeightLbl = new System.Windows.Forms.Label();
+            this.ArmorClsLbl = new System.Windows.Forms.Label();
+            this.ValueLbl = new System.Windows.Forms.Label();
+            this.GradeLbl = new System.Windows.Forms.Label();
+            this.FieldsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // WeaponListBox
+            // ArmorListBox
             // 
-            this.WeaponListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ArmorListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ItemIDColumn});
-            this.WeaponListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WeaponListBox.Location = new System.Drawing.Point(3, 3);
-            this.WeaponListBox.Name = "WeaponListBox";
-            this.WeaponListBox.Size = new System.Drawing.Size(253, 480);
-            this.WeaponListBox.TabIndex = 57;
-            this.WeaponListBox.UseCompatibleStateImageBehavior = false;
-            this.WeaponListBox.View = System.Windows.Forms.View.Details;
+            this.ArmorListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ArmorListBox.Location = new System.Drawing.Point(3, 3);
+            this.ArmorListBox.Name = "ArmorListBox";
+            this.ArmorListBox.Size = new System.Drawing.Size(253, 480);
+            this.ArmorListBox.TabIndex = 57;
+            this.ArmorListBox.UseCompatibleStateImageBehavior = false;
+            this.ArmorListBox.View = System.Windows.Forms.View.Details;
+            this.ArmorListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            this.ArmorListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDoubleClick);
             // 
             // ItemIDColumn
             // 
             this.ItemIDColumn.Text = "Item ID";
             this.ItemIDColumn.Width = 246;
             // 
+            // FieldsPanel
+            // 
+            this.FieldsPanel.Controls.Add(this.PenTb);
+            this.FieldsPanel.Controls.Add(this.NotesTb);
+            this.FieldsPanel.Controls.Add(this.ItemIDTb);
+            this.FieldsPanel.Controls.Add(this.WeightTb);
+            this.FieldsPanel.Controls.Add(this.ACTb);
+            this.FieldsPanel.Controls.Add(this.ValueTb);
+            this.FieldsPanel.Controls.Add(this.SpellFailureTb);
+            this.FieldsPanel.Controls.Add(this.ArmorGradeCbo);
+            this.FieldsPanel.Location = new System.Drawing.Point(367, 14);
+            this.FieldsPanel.Name = "FieldsPanel";
+            this.FieldsPanel.Size = new System.Drawing.Size(264, 453);
+            this.FieldsPanel.TabIndex = 60;
+            // 
+            // PenTb
+            // 
+            this.PenTb.Location = new System.Drawing.Point(3, 190);
+            this.PenTb.Multiline = true;
+            this.PenTb.Name = "PenTb";
+            this.PenTb.Size = new System.Drawing.Size(251, 57);
+            this.PenTb.TabIndex = 75;
+            // 
             // NotesTb
             // 
-            this.NotesTb.Location = new System.Drawing.Point(345, 354);
+            this.NotesTb.Location = new System.Drawing.Point(3, 336);
             this.NotesTb.Multiline = true;
             this.NotesTb.Name = "NotesTb";
-            this.NotesTb.Size = new System.Drawing.Size(262, 108);
-            this.NotesTb.TabIndex = 56;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(292, 355);
-            this.label8.Margin = new System.Windows.Forms.Padding(10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Notes:";
+            this.NotesTb.Size = new System.Drawing.Size(251, 108);
+            this.NotesTb.TabIndex = 74;
             // 
             // ItemIDTb
             // 
-            this.ItemIDTb.Location = new System.Drawing.Point(345, 20);
+            this.ItemIDTb.Location = new System.Drawing.Point(3, 3);
             this.ItemIDTb.Name = "ItemIDTb";
             this.ItemIDTb.Size = new System.Drawing.Size(121, 20);
-            this.ItemIDTb.TabIndex = 54;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(286, 21);
-            this.label7.Margin = new System.Windows.Forms.Padding(10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 17);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Item ID:";
+            this.ItemIDTb.TabIndex = 73;
             // 
             // WeightTb
             // 
-            this.WeightTb.Location = new System.Drawing.Point(345, 94);
+            this.WeightTb.Location = new System.Drawing.Point(3, 77);
             this.WeightTb.Name = "WeightTb";
             this.WeightTb.Size = new System.Drawing.Size(121, 20);
-            this.WeightTb.TabIndex = 52;
+            this.WeightTb.TabIndex = 72;
+            this.WeightTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
-            // CriticalTb
+            // ACTb
             // 
-            this.CriticalTb.Location = new System.Drawing.Point(345, 168);
-            this.CriticalTb.Name = "CriticalTb";
-            this.CriticalTb.Size = new System.Drawing.Size(121, 20);
-            this.CriticalTb.TabIndex = 51;
+            this.ACTb.Location = new System.Drawing.Point(3, 114);
+            this.ACTb.Name = "ACTb";
+            this.ACTb.Size = new System.Drawing.Size(121, 20);
+            this.ACTb.TabIndex = 71;
+            this.ACTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
-            // DamageTb
+            // ValueTb
             // 
-            this.DamageTb.Location = new System.Drawing.Point(345, 131);
-            this.DamageTb.Name = "DamageTb";
-            this.DamageTb.Size = new System.Drawing.Size(121, 20);
-            this.DamageTb.TabIndex = 50;
+            this.ValueTb.Location = new System.Drawing.Point(3, 40);
+            this.ValueTb.Name = "ValueTb";
+            this.ValueTb.Size = new System.Drawing.Size(121, 20);
+            this.ValueTb.TabIndex = 70;
+            this.ValueTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
             // 
-            // CostTB
+            // SpellFailureTb
             // 
-            this.CostTB.Location = new System.Drawing.Point(345, 57);
-            this.CostTB.Name = "CostTB";
-            this.CostTB.Size = new System.Drawing.Size(121, 20);
-            this.CostTB.TabIndex = 49;
+            this.SpellFailureTb.Location = new System.Drawing.Point(3, 262);
+            this.SpellFailureTb.Multiline = true;
+            this.SpellFailureTb.Name = "SpellFailureTb";
+            this.SpellFailureTb.Size = new System.Drawing.Size(251, 57);
+            this.SpellFailureTb.TabIndex = 69;
             // 
-            // RangeTb
+            // ArmorGradeCbo
             // 
-            this.RangeTb.Location = new System.Drawing.Point(345, 243);
-            this.RangeTb.Name = "RangeTb";
-            this.RangeTb.Size = new System.Drawing.Size(121, 20);
-            this.RangeTb.TabIndex = 48;
+            this.ArmorGradeCbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ArmorGradeCbo.FormattingEnabled = true;
+            this.ArmorGradeCbo.Items.AddRange(new object[] {
+            "Light",
+            "Medium",
+            "Heavy"});
+            this.ArmorGradeCbo.Location = new System.Drawing.Point(3, 151);
+            this.ArmorGradeCbo.Name = "ArmorGradeCbo";
+            this.ArmorGradeCbo.Size = new System.Drawing.Size(121, 21);
+            this.ArmorGradeCbo.TabIndex = 68;
             // 
-            // UpgradesTb
+            // PenLbl
             // 
-            this.UpgradesTb.Location = new System.Drawing.Point(345, 280);
-            this.UpgradesTb.Multiline = true;
-            this.UpgradesTb.Name = "UpgradesTb";
-            this.UpgradesTb.Size = new System.Drawing.Size(262, 57);
-            this.UpgradesTb.TabIndex = 47;
+            this.PenLbl.AutoSize = true;
+            this.PenLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.PenLbl.Location = new System.Drawing.Point(285, 205);
+            this.PenLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.PenLbl.Name = "PenLbl";
+            this.PenLbl.Size = new System.Drawing.Size(77, 17);
+            this.PenLbl.TabIndex = 74;
+            this.PenLbl.Text = "Penaulty\'s:";
             // 
-            // label6
+            // NotesLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(267, 281);
-            this.label6.Margin = new System.Windows.Forms.Padding(10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 17);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Upgrades:";
+            this.NotesLbl.AutoSize = true;
+            this.NotesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.NotesLbl.Location = new System.Drawing.Point(313, 351);
+            this.NotesLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.NotesLbl.Name = "NotesLbl";
+            this.NotesLbl.Size = new System.Drawing.Size(49, 17);
+            this.NotesLbl.TabIndex = 73;
+            this.NotesLbl.Text = "Notes:";
             // 
-            // label5
+            // ItemIDLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(285, 95);
-            this.label5.Margin = new System.Windows.Forms.Padding(10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Weight:";
+            this.ItemIDLbl.AutoSize = true;
+            this.ItemIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ItemIDLbl.Location = new System.Drawing.Point(307, 18);
+            this.ItemIDLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.ItemIDLbl.Name = "ItemIDLbl";
+            this.ItemIDLbl.Size = new System.Drawing.Size(55, 17);
+            this.ItemIDLbl.TabIndex = 72;
+            this.ItemIDLbl.Text = "Item ID:";
             // 
-            // label4
+            // SpellFailureLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(287, 244);
-            this.label4.Margin = new System.Windows.Forms.Padding(10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Range:";
+            this.SpellFailureLbl.AutoSize = true;
+            this.SpellFailureLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SpellFailureLbl.Location = new System.Drawing.Point(272, 277);
+            this.SpellFailureLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.SpellFailureLbl.Name = "SpellFailureLbl";
+            this.SpellFailureLbl.Size = new System.Drawing.Size(90, 17);
+            this.SpellFailureLbl.TabIndex = 71;
+            this.SpellFailureLbl.Text = "Spell Failure:";
             // 
-            // label3
+            // WeightLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(287, 169);
-            this.label3.Margin = new System.Windows.Forms.Padding(10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 17);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Critical:";
+            this.WeightLbl.AutoSize = true;
+            this.WeightLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.WeightLbl.Location = new System.Drawing.Point(306, 92);
+            this.WeightLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.WeightLbl.Name = "WeightLbl";
+            this.WeightLbl.Size = new System.Drawing.Size(56, 17);
+            this.WeightLbl.TabIndex = 70;
+            this.WeightLbl.Text = "Weight:";
             // 
-            // label2
+            // ArmorClsLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(276, 132);
-            this.label2.Margin = new System.Windows.Forms.Padding(10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Armor Class:";
+            this.ArmorClsLbl.AutoSize = true;
+            this.ArmorClsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ArmorClsLbl.Location = new System.Drawing.Point(274, 129);
+            this.ArmorClsLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.ArmorClsLbl.Name = "ArmorClsLbl";
+            this.ArmorClsLbl.Size = new System.Drawing.Size(88, 17);
+            this.ArmorClsLbl.TabIndex = 69;
+            this.ArmorClsLbl.Text = "Armor Class:";
             // 
-            // label1
+            // ValueLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(301, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Cost:";
+            this.ValueLbl.AutoSize = true;
+            this.ValueLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ValueLbl.Location = new System.Drawing.Point(314, 55);
+            this.ValueLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.ValueLbl.Name = "ValueLbl";
+            this.ValueLbl.Size = new System.Drawing.Size(48, 17);
+            this.ValueLbl.TabIndex = 68;
+            this.ValueLbl.Text = "Value:";
             // 
-            // TypeOfWeap
+            // GradeLbl
             // 
-            this.TypeOfWeap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TypeOfWeap.FormattingEnabled = true;
-            this.TypeOfWeap.Items.AddRange(new object[] {
-            "Melee",
-            "Ranged"});
-            this.TypeOfWeap.Location = new System.Drawing.Point(345, 205);
-            this.TypeOfWeap.Name = "TypeOfWeap";
-            this.TypeOfWeap.Size = new System.Drawing.Size(121, 21);
-            this.TypeOfWeap.TabIndex = 40;
+            this.GradeLbl.AutoSize = true;
+            this.GradeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GradeLbl.Location = new System.Drawing.Point(318, 166);
+            this.GradeLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.GradeLbl.Name = "GradeLbl";
+            this.GradeLbl.Size = new System.Drawing.Size(44, 17);
+            this.GradeLbl.TabIndex = 67;
+            this.GradeLbl.Text = "Type:";
             // 
-            // WeapTypeLbl
-            // 
-            this.WeapTypeLbl.AutoSize = true;
-            this.WeapTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WeapTypeLbl.Location = new System.Drawing.Point(297, 206);
-            this.WeapTypeLbl.Margin = new System.Windows.Forms.Padding(10);
-            this.WeapTypeLbl.Name = "WeapTypeLbl";
-            this.WeapTypeLbl.Size = new System.Drawing.Size(44, 17);
-            this.WeapTypeLbl.TabIndex = 39;
-            this.WeapTypeLbl.Text = "Type:";
-            // 
-            // InventoryPanalArmor
+            // ArmorInvControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.WeaponListBox);
-            this.Controls.Add(this.NotesTb);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.ItemIDTb);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.WeightTb);
-            this.Controls.Add(this.CriticalTb);
-            this.Controls.Add(this.DamageTb);
-            this.Controls.Add(this.CostTB);
-            this.Controls.Add(this.RangeTb);
-            this.Controls.Add(this.UpgradesTb);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TypeOfWeap);
-            this.Controls.Add(this.WeapTypeLbl);
-            this.Name = "InventoryPanalArmor";
-            this.Size = new System.Drawing.Size(617, 485);
+            this.Controls.Add(this.PenLbl);
+            this.Controls.Add(this.NotesLbl);
+            this.Controls.Add(this.ItemIDLbl);
+            this.Controls.Add(this.SpellFailureLbl);
+            this.Controls.Add(this.WeightLbl);
+            this.Controls.Add(this.ArmorClsLbl);
+            this.Controls.Add(this.ValueLbl);
+            this.Controls.Add(this.GradeLbl);
+            this.Controls.Add(this.FieldsPanel);
+            this.Controls.Add(this.ArmorListBox);
+            this.Name = "ArmorInvControl";
+            this.Size = new System.Drawing.Size(643, 485);
+            this.Load += new System.EventHandler(this.Panel_Load);
+            this.FieldsPanel.ResumeLayout(false);
+            this.FieldsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,25 +266,24 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView WeaponListBox;
+        private System.Windows.Forms.ListView ArmorListBox;
         private System.Windows.Forms.ColumnHeader ItemIDColumn;
+        private System.Windows.Forms.Panel FieldsPanel;
+        private System.Windows.Forms.TextBox PenTb;
         private System.Windows.Forms.TextBox NotesTb;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox ItemIDTb;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox WeightTb;
-        private System.Windows.Forms.TextBox CriticalTb;
-        private System.Windows.Forms.TextBox DamageTb;
-        private System.Windows.Forms.TextBox CostTB;
-        private System.Windows.Forms.TextBox RangeTb;
-        private System.Windows.Forms.TextBox UpgradesTb;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox TypeOfWeap;
-        private System.Windows.Forms.Label WeapTypeLbl;
+        private System.Windows.Forms.TextBox ACTb;
+        private System.Windows.Forms.TextBox ValueTb;
+        private System.Windows.Forms.TextBox SpellFailureTb;
+        private System.Windows.Forms.ComboBox ArmorGradeCbo;
+        private System.Windows.Forms.Label PenLbl;
+        private System.Windows.Forms.Label NotesLbl;
+        private System.Windows.Forms.Label ItemIDLbl;
+        private System.Windows.Forms.Label SpellFailureLbl;
+        private System.Windows.Forms.Label WeightLbl;
+        private System.Windows.Forms.Label ArmorClsLbl;
+        private System.Windows.Forms.Label ValueLbl;
+        private System.Windows.Forms.Label GradeLbl;
     }
 }

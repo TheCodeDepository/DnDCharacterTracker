@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AddInventoryForm
 {
-    public partial class InventoryPanelTemplate : UserControl
+    public partial class MiscInvControl : UserControl
     {
-        public InventoryPanelTemplate()
+        public MiscInvControl()
         {
             InitializeComponent();
         }

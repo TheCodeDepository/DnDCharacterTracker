@@ -12,119 +12,103 @@ namespace AddInventoryForm
 {
     public partial class ButtonControl : UserControl
     {
+
         public ButtonControl()
         {
             InitializeComponent();
+
         }
+
+        public IButtons ButtonInterfaces;
 
         private void ButtonControl_Load(object sender, EventArgs e)
         {
+            ButtonEanabler();
 
         }
 
-        public TabPage = 
+        private void ButtonEanabler()
+        {
+            RemoveBtnEnb(false);
+            SaveBtnEnb(false);
+            EditBtnEnb(false);
+            AddBtnEnb(true);
+            CancelBtnEnb(false);
+        }
+
+        public void SubscribeButtons()
+        {
+
+            ButtonInterfaces.SubscribeEdit(EditBtnEnb);
+            ButtonInterfaces.SubscribeSave(SaveBtnEnb);
+            ButtonInterfaces.SubscribeAdd(AddBtnEnb);
+            ButtonInterfaces.SubscribeRemove(RemoveBtnEnb);
+        }
+
+
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-
+            ButtonInterfaces.EditRecord();
+            SaveBtn.Enabled = true;
+            EditBtn.Enabled = false;
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
+            if (ButtonInterfaces.DataLoss())
+            {
+                var m = MessageBox.Show("Are you sure you wish to exit without saveing your changes?", "Close", MessageBoxButtons.YesNo);
+                if (m == DialogResult.Yes)
+                {
+                    InventoryForm.ActiveForm.Close();
+                }
+            }
+            InventoryForm.ActiveForm.Close();
 
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
 
+            if (ButtonInterfaces.SaveRecord())
+            {
+                SaveBtn.Enabled = false;
+                AddBtn.Enabled = true;
+                ButtonInterfaces.EnableFields(false);
+            }
         }
 
         private void SampleBtn_Click(object sender, EventArgs e)
         {
-
+            ButtonInterfaces.SampleInput();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-
+            ButtonInterfaces.ClearFields();
+            ButtonInterfaces.EnableFields(false);
+            CancelBtnEnb(false);
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
 
+            ButtonInterfaces.RemoveRecord();
+            RemoveBtn.Enabled = true;
+            EditBtn.Enabled = false;
+
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        private void TestButton_Click(object sender, EventArgs e)
-        {
-            invWeapPan1.testButton();
-        }
-        private void AddInventoryBtn_Click(object sender, EventArgs e)
-        {
-            SaveButton.Enabled = true;
-            AddInventoryBtn.Enabled = false;
+            SaveBtn.Enabled = true;
+            AddBtn.Enabled = false;
             EditBtn.Enabled = false;
-            if (InvTabControl.SelectedTab == WeapTab)
-            {
-                invWeapPan1.EnableDisable();
-
-            }
-        }
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            if (currTab == Tab.Weap)
-            {
-                if (invWeapPan1.SaveRecord())
-                {
-                    SaveButton.Enabled = false;
-                }
-            }
-            AddInventoryBtn.Enabled = true;
-
-        }
-        private void RemoveButton_Click(object sender, EventArgs e)
-        {
-            if (currTab == Tab.Weap)
-            {
-                invWeapPan1.RemoveRecord();
-                RemoveButton.Enabled = true;
-                EditBtn.Enabled = false;
-            }
+            ButtonInterfaces.EnableFields(true);
 
         }
 
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            if (currTab == Tab.Weap)
-            {
-                if (invWeapPan1.DataLoss())
-                {
-                    var m = MessageBox.Show("Are you sure you wish to exit without saveing your changes?", "Close", MessageBoxButtons.YesNo);
-                    if (m == DialogResult.Yes)
-                    {
-                        Close();
-                    }
-                }
-                Close();
-            }
-
-        }
-        private void EditBtn_Click(object sender, EventArgs e)
-        {
-            if (currTab == Tab.Weap)
-            {
-                invWeapPan1.EditRecord();
-                SaveButton.Enabled = true;
-                EditBtn.Enabled = false;
-            }
-
-        }
 
         private void EditBtnEnb(bool b)
         {
@@ -133,19 +117,25 @@ namespace AddInventoryForm
         }
         private void SaveBtnEnb(bool b)
         {
-            SaveButton.Enabled = b;
+            SaveBtn.Enabled = b;
 
         }
         private void AddBtnEnb(bool b)
         {
-            AddInventoryBtn.Enabled = b;
+            AddBtn.Enabled = b;
 
         }
         private void RemoveBtnEnb(bool b)
         {
-            RemoveButton.Enabled = b;
+            RemoveBtn.Enabled = b;
 
         }
+        private void CancelBtnEnb(bool b)
+        {
+            CancelBtn.Enabled = b;
+
+        }
+
 
     }
 }

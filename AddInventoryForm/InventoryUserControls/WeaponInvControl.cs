@@ -11,9 +11,9 @@ using Storage;
 
 namespace AddInventoryForm
 {
-    public partial class InvWeapPan : UserControl, IButtons
+    public partial class WeaponInvControl : UserControl, IButtons
     {
-        public InvWeapPan()
+        public WeaponInvControl()
         {
             InitializeComponent();
         }
@@ -21,35 +21,7 @@ namespace AddInventoryForm
 
         //Events
 
-        Action<bool> EditBtnEnable;
-        public void SubscribeEdit(Action<bool> Method)
-        {
-            EditBtnEnable = Method;
-        }
 
-        Action<bool> SaveBtnEnable;
-        public void SubscribeSave(Action<bool> Method)
-        {
-            SaveBtnEnable = Method;
-        }
-
-        Action<bool> AddBtnEnable;
-        public void SubscribeAdd(Action<bool> Method)
-        {
-            AddBtnEnable = Method;
-        }
-
-        Action<bool> RemoveBtnEnable;
-        public void SubscribeRemove(Action<bool> Method)
-        {
-            RemoveBtnEnable = Method;
-        }
-
-        Action<bool> SampleBtnEnable;
-        public void SampleRemove(Action<bool> Method)
-        {
-            SampleBtnEnable = Method;
-        }
 
 
         //Fields
@@ -62,27 +34,6 @@ namespace AddInventoryForm
 
         //Event Handlers
 
-        private void WeaponListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadSelectedRecord();
-            if (WeaponListBox.SelectedIndices.Count > 0)
-            {
-                EditBtnEnable(true);
-                RemoveBtnEnable(true);
-                
-            }
-            else
-            {
-                EditBtnEnable(false);
-                RemoveBtnEnable(false);
-
-            }
-        }
-        private void WeaponListBox_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-            EditRecord();
-        }
         private void TypeOfWeap_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (TypeOfWeap.Text == "Ranged")
@@ -93,22 +44,6 @@ namespace AddInventoryForm
             {
                 RangeTb.Enabled = false;
             }
-        }
-        private void InvWeapPan_Load(object sender, EventArgs e)
-        {
-            EnableDisable();
-            CurrentRecord = -1;
-            InventoryList = Storage.Storage.InventoryList;
-            LoadList();
-            RangeTb.Enabled = false;
-        }
-        private void RangeTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void WeapTypeLbl_Click(object sender, EventArgs e)
-        {
-
         }
         private void ForceNum(object sender, KeyPressEventArgs e)
         {
@@ -124,7 +59,7 @@ namespace AddInventoryForm
         public void EnableFields(bool val)
         {
             val = !val;
-            foreach (var item in panel2.Controls)
+            foreach (var item in FieldsPanel.Controls)
             {
                 var textBoxs = item as TextBox;
                 if (textBoxs != null)
@@ -166,7 +101,7 @@ namespace AddInventoryForm
             AddBtnEnable(true);
             LoadList();
             ClearFields();
-            EnableDisable();
+            //EnableDisable();
             return true;
         }
         public bool DataLoss()
@@ -178,7 +113,7 @@ namespace AddInventoryForm
             }
             else
             {
-                foreach (var item in panel2.Controls)
+                foreach (var item in FieldsPanel.Controls)
                 {
                     var textBoxs = item as TextBox;
                     if (textBoxs != null)
@@ -216,7 +151,7 @@ namespace AddInventoryForm
         }
         public void ClearFields()
         {
-            foreach (var item in panel2.Controls)
+            foreach (var item in FieldsPanel.Controls)
             {
                 var textBoxs = item as TextBox;
                 if (textBoxs != null)
@@ -231,9 +166,11 @@ namespace AddInventoryForm
                 }
             }
         }
+        bool tf = true;
         public void SampleInput()
         {
-            if (count == 0)
+            tf = !tf;
+            if (tf)
             {
                 ItemIDTb.Text = "Cross Bow";
                 TypeOfWeap.Text = "Ranged";
@@ -241,10 +178,10 @@ namespace AddInventoryForm
                 CostTB.Text = "300";
                 DamageTb.Text = "1d8";
                 CriticalTb.Text = "19-20/x2";
-                WeightTb.Text = "20kg";
+                WeightTb.Text = "20";
                 UpgradesTb.Text = "Masterpiece, Something else, textextextextext";
                 NotesTb.Text = "test";
-                count++;
+                
 
             }
             else
@@ -254,14 +191,70 @@ namespace AddInventoryForm
                 CostTB.Text = "12321";
                 DamageTb.Text = "2d6";
                 CriticalTb.Text = "19-20/x2";
-                WeightTb.Text = "20kg";
+                WeightTb.Text = "20";
                 UpgradesTb.Text = "Masterpiece, Something else, textextextextext";
                 NotesTb.Text = "test";
-                count--;
+                
 
             }
         }
 
+        public void ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSelectedRecord();
+            if (WeaponListBox.SelectedIndices.Count > 0)
+            {
+                EditBtnEnable(true);
+                RemoveBtnEnable(true);
+
+            }
+            else
+            {
+                EditBtnEnable(false);
+                RemoveBtnEnable(false);
+
+            }
+        }
+        public void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            EditRecord();
+        }
+        public void Panel_Load(object sender, EventArgs e)
+        {
+            CurrentRecord = -1;
+            InventoryList = Storage.Storage.InventoryList;
+            EnableFields(false);
+            LoadList();
+            RangeTb.Enabled = false;
+        }
+
+
+        Action<bool> EditBtnEnable;
+        public void SubscribeEdit(Action<bool> Method)
+        {
+            EditBtnEnable = Method;
+        }
+        Action<bool> SaveBtnEnable;
+        public void SubscribeSave(Action<bool> Method)
+        {
+            SaveBtnEnable = Method;
+        }
+        Action<bool> AddBtnEnable;
+        public void SubscribeAdd(Action<bool> Method)
+        {
+            AddBtnEnable = Method;
+        }
+        Action<bool> RemoveBtnEnable;
+        public void SubscribeRemove(Action<bool> Method)
+        {
+            RemoveBtnEnable = Method;
+        }
+        Action<bool> SampleBtnEnable;
+        public void SampleRemove(Action<bool> Method)
+        {
+            SampleBtnEnable = Method;
+        }
 
 
         //Functions
@@ -278,29 +271,6 @@ namespace AddInventoryForm
             }
         }
 
-        private void LoadListItem(WeaponItem i)
-        {
-            CurrentRecord = i.Key;
-            ItemIDTb.Text = i.ItemID;
-            CostTB.Text = i.Value.ToString();
-            WeightTb.Text = i.Weight.ToString();
-            DamageTb.Text = i.Damage;
-            CriticalTb.Text = i.Critical;
-            if (i.Range > 0)
-            {
-                TypeOfWeap.SelectedIndex = 1;
-                RangeTb.Text = i.Range.ToString();
-
-            }
-            else
-            {
-                TypeOfWeap.SelectedIndex = 0;
-            }
-            UpgradesTb.Text = i.Upgrades;
-            NotesTb.Text = i.Notes;
-
-        }
-
         private void LoadSelectedRecord()
         {
             int temp = -1;
@@ -311,15 +281,28 @@ namespace AddInventoryForm
             if (temp != -1)
             {
                 var q = InventoryList.Find(p => p.Key == CurrentListKeys[temp]);
+                var i = (WeaponItem)q;
+                CurrentRecord = i.Key;
+                ItemIDTb.Text = i.ItemID;
+                CostTB.Text = i.Value.ToString();
+                WeightTb.Text = i.Weight.ToString();
+                DamageTb.Text = i.Damage;
+                CriticalTb.Text = i.Critical;
+                if (i.Range > 0)
+                {
+                    TypeOfWeap.SelectedIndex = 1;
+                    RangeTb.Text = i.Range.ToString();
 
+                }
+                else
+                {
+                    TypeOfWeap.SelectedIndex = 0;
+                }
+                UpgradesTb.Text = i.Upgrades;
+                NotesTb.Text = i.Notes;
 
-                LoadListItem((WeaponItem)q);
-                CurrentRecord = q.Key;
             }
-        }
-
-
-        int count = 0;
+        } 
 
         //Input Validation
 
@@ -333,8 +316,6 @@ namespace AddInventoryForm
             l.Font = new Font("Microsoft Sans Serif", 10);
             Asterisks.Add(l);
             this.Controls.Add(l);
-
-
         }
 
         private bool ValidateFields()
@@ -363,20 +344,20 @@ namespace AddInventoryForm
             {
                 if (string.IsNullOrWhiteSpace(RangeTb.Text))
                 {
-                    Asterisk(DamageLbl.Location);
+                    Asterisk(RangeLbl.Location);
                     t = false;
 
                 }
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(TypeOfWeap.Text))
+                if (TypeOfWeap.SelectedIndex == -1)
                 {
-                    Asterisk(CritLbl.Location);
+                    Asterisk(WeapTypeLbl.Location);
                     t = false;
 
                 }
-                if (TypeOfWeap.Text == "Melee")
+                if (TypeOfWeap.SelectedIndex == 0)
                 {
                     RangeTb.Text = "0";
                 }
@@ -470,6 +451,5 @@ namespace AddInventoryForm
         }
 
 
-       
     }
 }

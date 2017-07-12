@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEnabled.cs" />
     <Compile Include="InventoryPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>

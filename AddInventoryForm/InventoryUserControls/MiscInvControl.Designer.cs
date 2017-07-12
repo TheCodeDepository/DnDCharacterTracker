@@ -1,6 +1,6 @@
 ﻿namespace AddInventoryForm
 {
-    partial class InventoryPanelTemplate
+    partial class MiscInvControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -106,7 +106,7 @@
             // CostTB
             // 
             this.CostTB.Location = new System.Drawing.Point(345, 57);
-            this.CostTB.Name = "CostTB";
+            this.CostTB.Name = "ValueTb";
             this.CostTB.Size = new System.Drawing.Size(121, 20);
             this.CostTB.TabIndex = 49;
             // 

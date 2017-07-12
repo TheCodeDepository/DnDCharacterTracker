@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.InvMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,45 +59,31 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.EditBtn = new System.Windows.Forms.Button();
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.TestButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.AddInventoryBtn = new System.Windows.Forms.Button();
             this.InvTabControl = new System.Windows.Forms.TabControl();
             this.WeapTab = new System.Windows.Forms.TabPage();
-            this.invWeapPan1 = new AddInventoryForm.InvWeapPan();
-            this.ArmourTab = new System.Windows.Forms.TabPage();
-            this.ArmourListBox = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.weaponInvControl1 = new AddInventoryForm.WeaponInvControl();
+            this.ArmorTab = new System.Windows.Forms.TabPage();
+            this.armorInvControl1 = new AddInventoryForm.ArmorInvControl();
             this.MiscTab = new System.Windows.Forms.TabPage();
-            this.MiscListBox = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.buttonControl1 = new AddInventoryForm.ButtonControl();
+            this.InvMenuStrip.SuspendLayout();
             this.InvTabControl.SuspendLayout();
             this.WeapTab.SuspendLayout();
-            this.ArmourTab.SuspendLayout();
-            this.MiscTab.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ArmorTab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // InvMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.InvMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.InvMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.InvMenuStrip.Name = "InvMenuStrip";
+            this.InvMenuStrip.Size = new System.Drawing.Size(784, 24);
+            this.InvMenuStrip.TabIndex = 0;
+            this.InvMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -121,7 +107,8 @@
             this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -129,39 +116,42 @@
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printToolStripMenuItem.Text = "&Print";
             // 
             // printPreviewToolStripMenuItem
@@ -169,18 +159,18 @@
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem
@@ -201,26 +191,29 @@
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -228,7 +221,8 @@
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -236,18 +230,19 @@
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -312,233 +307,91 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.EditBtn);
-            this.groupBox1.Controls.Add(this.CloseBtn);
-            this.groupBox1.Controls.Add(this.SaveButton);
-            this.groupBox1.Controls.Add(this.TestButton);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.RemoveButton);
-            this.groupBox1.Controls.Add(this.AddInventoryBtn);
-            this.groupBox1.Location = new System.Drawing.Point(686, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(85, 504);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            // 
-            // EditBtn
-            // 
-            this.EditBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.EditBtn.Location = new System.Drawing.Point(6, 39);
-            this.EditBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(72, 23);
-            this.EditBtn.TabIndex = 42;
-            this.EditBtn.Text = "Edit";
-            this.EditBtn.UseVisualStyleBackColor = true;
-            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.CloseBtn.Location = new System.Drawing.Point(6, 472);
-            this.CloseBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(72, 23);
-            this.CloseBtn.TabIndex = 41;
-            this.CloseBtn.Text = "Close";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.SaveButton.Location = new System.Drawing.Point(6, 66);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(72, 23);
-            this.SaveButton.TabIndex = 40;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // TestButton
-            // 
-            this.TestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TestButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.TestButton.Location = new System.Drawing.Point(6, 123);
-            this.TestButton.Margin = new System.Windows.Forms.Padding(2);
-            this.TestButton.Name = "TestButton";
-            this.TestButton.Size = new System.Drawing.Size(72, 23);
-            this.TestButton.TabIndex = 39;
-            this.TestButton.Text = "Test";
-            this.TestButton.UseVisualStyleBackColor = true;
-            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.button2.Location = new System.Drawing.Point(6, 445);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.RemoveButton.Location = new System.Drawing.Point(6, 93);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(72, 23);
-            this.RemoveButton.TabIndex = 36;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
-            // 
-            // AddInventoryBtn
-            // 
-            this.AddInventoryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddInventoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.AddInventoryBtn.Location = new System.Drawing.Point(6, 12);
-            this.AddInventoryBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.AddInventoryBtn.Name = "AddInventoryBtn";
-            this.AddInventoryBtn.Size = new System.Drawing.Size(72, 23);
-            this.AddInventoryBtn.TabIndex = 35;
-            this.AddInventoryBtn.Text = "Add";
-            this.AddInventoryBtn.UseVisualStyleBackColor = true;
-            this.AddInventoryBtn.Click += new System.EventHandler(this.AddInventoryBtn_Click);
-            // 
             // InvTabControl
             // 
             this.InvTabControl.Controls.Add(this.WeapTab);
-            this.InvTabControl.Controls.Add(this.ArmourTab);
+            this.InvTabControl.Controls.Add(this.ArmorTab);
             this.InvTabControl.Controls.Add(this.MiscTab);
-            this.InvTabControl.Location = new System.Drawing.Point(11, 7);
+            this.InvTabControl.Location = new System.Drawing.Point(13, 28);
             this.InvTabControl.Name = "InvTabControl";
             this.InvTabControl.SelectedIndex = 0;
-            this.InvTabControl.Size = new System.Drawing.Size(669, 518);
-            this.InvTabControl.TabIndex = 0;
+            this.InvTabControl.Size = new System.Drawing.Size(668, 521);
+            this.InvTabControl.TabIndex = 1;
             this.InvTabControl.SelectedIndexChanged += new System.EventHandler(this.InvTabControl_SelectedIndexChanged);
             // 
             // WeapTab
             // 
-            this.WeapTab.Controls.Add(this.invWeapPan1);
+            this.WeapTab.Controls.Add(this.weaponInvControl1);
             this.WeapTab.Location = new System.Drawing.Point(4, 22);
             this.WeapTab.Name = "WeapTab";
-            this.WeapTab.Size = new System.Drawing.Size(661, 492);
+            this.WeapTab.Padding = new System.Windows.Forms.Padding(3);
+            this.WeapTab.Size = new System.Drawing.Size(660, 495);
             this.WeapTab.TabIndex = 0;
-            this.WeapTab.Text = "Weapon\'s";
+            this.WeapTab.Text = "Weapons";
+            this.WeapTab.UseVisualStyleBackColor = true;
             // 
-            // invWeapPan1
+            // weaponInvControl1
             // 
-            this.invWeapPan1.Location = new System.Drawing.Point(4, 4);
-            this.invWeapPan1.Name = "invWeapPan1";
-            this.invWeapPan1.Size = new System.Drawing.Size(654, 485);
-            this.invWeapPan1.TabIndex = 0;
+            this.weaponInvControl1.Location = new System.Drawing.Point(5, 4);
+            this.weaponInvControl1.Name = "weaponInvControl1";
+            this.weaponInvControl1.Size = new System.Drawing.Size(653, 485);
+            this.weaponInvControl1.TabIndex = 0;
             // 
-            // ArmourTab
+            // ArmorTab
             // 
-            this.ArmourTab.Controls.Add(this.ArmourListBox);
-            this.ArmourTab.Location = new System.Drawing.Point(4, 22);
-            this.ArmourTab.Name = "ArmourTab";
-            this.ArmourTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ArmourTab.Size = new System.Drawing.Size(661, 492);
-            this.ArmourTab.TabIndex = 1;
-            this.ArmourTab.Text = "Armour";
-            this.ArmourTab.UseVisualStyleBackColor = true;
+            this.ArmorTab.Controls.Add(this.armorInvControl1);
+            this.ArmorTab.Location = new System.Drawing.Point(4, 22);
+            this.ArmorTab.Name = "ArmorTab";
+            this.ArmorTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ArmorTab.Size = new System.Drawing.Size(660, 495);
+            this.ArmorTab.TabIndex = 1;
+            this.ArmorTab.Text = "Armour";
+            this.ArmorTab.UseVisualStyleBackColor = true;
             // 
-            // ArmourListBox
+            // armorInvControl1
             // 
-            this.ArmourListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.ArmourListBox.Location = new System.Drawing.Point(6, 6);
-            this.ArmourListBox.Name = "ArmourListBox";
-            this.ArmourListBox.Scrollable = false;
-            this.ArmourListBox.Size = new System.Drawing.Size(263, 480);
-            this.ArmourListBox.TabIndex = 1;
-            this.ArmourListBox.UseCompatibleStateImageBehavior = false;
-            this.ArmourListBox.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Item ID";
-            this.columnHeader1.Width = 592;
+            this.armorInvControl1.Location = new System.Drawing.Point(7, 7);
+            this.armorInvControl1.Name = "armorInvControl1";
+            this.armorInvControl1.Size = new System.Drawing.Size(643, 485);
+            this.armorInvControl1.TabIndex = 0;
             // 
             // MiscTab
             // 
-            this.MiscTab.Controls.Add(this.MiscListBox);
             this.MiscTab.Location = new System.Drawing.Point(4, 22);
             this.MiscTab.Name = "MiscTab";
             this.MiscTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MiscTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MiscTab.Size = new System.Drawing.Size(661, 492);
+            this.MiscTab.Size = new System.Drawing.Size(660, 495);
             this.MiscTab.TabIndex = 2;
             this.MiscTab.Text = "Miscellaneous";
             this.MiscTab.UseVisualStyleBackColor = true;
             // 
-            // MiscListBox
+            // buttonControl1
             // 
-            this.MiscListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.MiscListBox.Location = new System.Drawing.Point(6, 6);
-            this.MiscListBox.Name = "MiscListBox";
-            this.MiscListBox.Scrollable = false;
-            this.MiscListBox.Size = new System.Drawing.Size(263, 480);
-            this.MiscListBox.TabIndex = 2;
-            this.MiscListBox.UseCompatibleStateImageBehavior = false;
-            this.MiscListBox.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Item ID";
-            this.columnHeader2.Width = 592;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.InvTabControl);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 537);
-            this.panel1.TabIndex = 1;
+            this.buttonControl1.Location = new System.Drawing.Point(687, 50);
+            this.buttonControl1.Name = "buttonControl1";
+            this.buttonControl1.Size = new System.Drawing.Size(88, 498);
+            this.buttonControl1.TabIndex = 2;
             // 
             // InventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.buttonControl1);
+            this.Controls.Add(this.InvTabControl);
+            this.Controls.Add(this.InvMenuStrip);
+            this.MainMenuStrip = this.InvMenuStrip;
             this.Name = "InventoryForm";
-            this.Text = "Inventory";
             this.Load += new System.EventHandler(this.Inventory_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.InvMenuStrip.ResumeLayout(false);
+            this.InvMenuStrip.PerformLayout();
             this.InvTabControl.ResumeLayout(false);
             this.WeapTab.ResumeLayout(false);
-            this.ArmourTab.ResumeLayout(false);
-            this.MiscTab.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.ArmorTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip InvMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -568,23 +421,13 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl InvTabControl;
-        private System.Windows.Forms.TabPage ArmourTab;
-        private System.Windows.Forms.TabPage MiscTab;
-        private System.Windows.Forms.ListView MiscListBox;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button RemoveButton;
-        private System.Windows.Forms.Button AddInventoryBtn;
-        private System.Windows.Forms.Button TestButton;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button CloseBtn;
-        private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.TabPage WeapTab;
-        private System.Windows.Forms.ListView ArmourListBox;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Panel panel1;
-        private InvWeapPan invWeapPan1;
+        private WeaponInvControl weaponInvControl1;
+        private System.Windows.Forms.TabPage ArmorTab;
+        private ArmorInvControl armorInvControl1;
+        private System.Windows.Forms.TabPage MiscTab;
+        private ButtonControl buttonControl1;
     }
 }
+#endregion

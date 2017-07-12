@@ -1,6 +1,6 @@
 ﻿namespace AddInventoryForm
 {
-    partial class InvWeapPan
+    partial class WeaponInvControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.DamageLbl = new System.Windows.Forms.Label();
             this.ValueLbl = new System.Windows.Forms.Label();
             this.WeapTypeLbl = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.FieldsPanel = new System.Windows.Forms.Panel();
             this.NotesTb = new System.Windows.Forms.TextBox();
             this.ItemIDTb = new System.Windows.Forms.TextBox();
             this.WeightTb = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.TypeOfWeap = new System.Windows.Forms.ComboBox();
             this.WeaponListBox = new System.Windows.Forms.ListView();
             this.ItemIDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel2.SuspendLayout();
+            this.FieldsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // NotesLbl
@@ -153,19 +153,19 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.NotesTb);
-            this.panel2.Controls.Add(this.ItemIDTb);
-            this.panel2.Controls.Add(this.WeightTb);
-            this.panel2.Controls.Add(this.CriticalTb);
-            this.panel2.Controls.Add(this.DamageTb);
-            this.panel2.Controls.Add(this.CostTB);
-            this.panel2.Controls.Add(this.RangeTb);
-            this.panel2.Controls.Add(this.UpgradesTb);
-            this.panel2.Controls.Add(this.TypeOfWeap);
-            this.panel2.Location = new System.Drawing.Point(376, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 453);
-            this.panel2.TabIndex = 83;
+            this.FieldsPanel.Controls.Add(this.NotesTb);
+            this.FieldsPanel.Controls.Add(this.ItemIDTb);
+            this.FieldsPanel.Controls.Add(this.WeightTb);
+            this.FieldsPanel.Controls.Add(this.CriticalTb);
+            this.FieldsPanel.Controls.Add(this.DamageTb);
+            this.FieldsPanel.Controls.Add(this.CostTB);
+            this.FieldsPanel.Controls.Add(this.RangeTb);
+            this.FieldsPanel.Controls.Add(this.UpgradesTb);
+            this.FieldsPanel.Controls.Add(this.TypeOfWeap);
+            this.FieldsPanel.Location = new System.Drawing.Point(376, 13);
+            this.FieldsPanel.Name = "panel2";
+            this.FieldsPanel.Size = new System.Drawing.Size(269, 453);
+            this.FieldsPanel.TabIndex = 83;
             // 
             // NotesTb
             // 
@@ -207,7 +207,7 @@
             // CostTB
             // 
             this.CostTB.Location = new System.Drawing.Point(3, 40);
-            this.CostTB.Name = "CostTB";
+            this.CostTB.Name = "ValueTb";
             this.CostTB.Size = new System.Drawing.Size(121, 20);
             this.CostTB.TabIndex = 67;
             this.CostTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ForceNum);
@@ -252,8 +252,8 @@
             this.WeaponListBox.TabIndex = 75;
             this.WeaponListBox.UseCompatibleStateImageBehavior = false;
             this.WeaponListBox.View = System.Windows.Forms.View.Details;
-            this.WeaponListBox.SelectedIndexChanged += new System.EventHandler(this.WeaponListBox_SelectedIndexChanged);
-            this.WeaponListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WeaponListBox_MouseDoubleClick);
+            this.WeaponListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            this.WeaponListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDoubleClick);
             // 
             // ItemIDColumn
             // 
@@ -274,12 +274,12 @@
             this.Controls.Add(this.DamageLbl);
             this.Controls.Add(this.ValueLbl);
             this.Controls.Add(this.WeapTypeLbl);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.FieldsPanel);
             this.Name = "InvWeapPan";
             this.Size = new System.Drawing.Size(653, 485);
-            this.Load += new System.EventHandler(this.InvWeapPan_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Load += new System.EventHandler(this.Panel_Load);
+            this.FieldsPanel.ResumeLayout(false);
+            this.FieldsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +296,7 @@
         private System.Windows.Forms.Label DamageLbl;
         private System.Windows.Forms.Label ValueLbl;
         private System.Windows.Forms.Label WeapTypeLbl;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel FieldsPanel;
         private System.Windows.Forms.TextBox NotesTb;
         private System.Windows.Forms.TextBox ItemIDTb;
         private System.Windows.Forms.TextBox WeightTb;
