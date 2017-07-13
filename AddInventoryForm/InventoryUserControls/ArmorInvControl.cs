@@ -250,7 +250,7 @@ namespace AddInventoryForm
             }
         }
 
-        public void ListBox_SelectedIndexChanged(object sender, EventArgs e)
+       public void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadSelectedRecord();
             if (ArmorListBox.SelectedIndices.Count > 0)
@@ -266,26 +266,17 @@ namespace AddInventoryForm
 
             }
         }
-        public void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+       public void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             EditRecord();
         }
-        public void Panel_Load(object sender, EventArgs e)
+       public void Panel_Load(object sender, EventArgs e)
         {
             InventoryList = Storage.Storage.InventoryList;
             EnableFields(false);
             LoadList();
             CurrentRecord = -1;
         }
-
-        //Events
-
-
-
-
-
-
-
 
         //Functions
 

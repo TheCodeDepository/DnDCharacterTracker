@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AddInventoryForm
 {
-    public interface IButtons
+    interface IButtons
     {
         void ListBox_SelectedIndexChanged(object sender, EventArgs e);
         void ListBox_MouseDoubleClick(object sender, MouseEventArgs e);
