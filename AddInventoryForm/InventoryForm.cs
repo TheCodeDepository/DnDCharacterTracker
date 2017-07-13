@@ -28,7 +28,7 @@ namespace AddInventoryForm
             {
                 if (InvTabControl.SelectedIndex == 2)
                 {
-                    return weaponInvControl1;
+                    return miscInvControl1;
                 }
                 if (InvTabControl.SelectedIndex == 1)
                 {

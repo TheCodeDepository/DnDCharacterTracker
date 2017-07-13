@@ -66,10 +66,12 @@
             this.armorInvControl1 = new AddInventoryForm.ArmorInvControl();
             this.MiscTab = new System.Windows.Forms.TabPage();
             this.buttonControl1 = new AddInventoryForm.ButtonControl();
+            this.miscInvControl1 = new AddInventoryForm.MiscInvControl();
             this.InvMenuStrip.SuspendLayout();
             this.InvTabControl.SuspendLayout();
             this.WeapTab.SuspendLayout();
             this.ArmorTab.SuspendLayout();
+            this.MiscTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // InvMenuStrip
@@ -357,6 +359,7 @@
             // 
             // MiscTab
             // 
+            this.MiscTab.Controls.Add(this.miscInvControl1);
             this.MiscTab.Location = new System.Drawing.Point(4, 22);
             this.MiscTab.Name = "MiscTab";
             this.MiscTab.Padding = new System.Windows.Forms.Padding(3);
@@ -372,6 +375,13 @@
             this.buttonControl1.Size = new System.Drawing.Size(88, 498);
             this.buttonControl1.TabIndex = 2;
             // 
+            // miscInvControl1
+            // 
+            this.miscInvControl1.Location = new System.Drawing.Point(14, 3);
+            this.miscInvControl1.Name = "miscInvControl1";
+            this.miscInvControl1.Size = new System.Drawing.Size(615, 485);
+            this.miscInvControl1.TabIndex = 0;
+            // 
             // InventoryForm
             // 
             this.ClientSize = new System.Drawing.Size(784, 561);
@@ -386,6 +396,7 @@
             this.InvTabControl.ResumeLayout(false);
             this.WeapTab.ResumeLayout(false);
             this.ArmorTab.ResumeLayout(false);
+            this.MiscTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,6 +439,7 @@
         private ArmorInvControl armorInvControl1;
         private System.Windows.Forms.TabPage MiscTab;
         private ButtonControl buttonControl1;
+        private MiscInvControl miscInvControl1;
     }
 }
 #endregion

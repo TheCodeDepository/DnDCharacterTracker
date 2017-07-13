@@ -11,7 +11,7 @@ using Storage;
 
 namespace AddInventoryForm
 {
-    public partial class MiscInvControl : UserControl
+    public partial class MiscInvControl : UserControl , IButtons
     {
         public MiscInvControl()
         {
@@ -97,11 +97,11 @@ namespace AddInventoryForm
             if (CurrentRecord != -1)
             {
                 var query = InventoryList.FindIndex(p => p.Key == CurrentRecord);
-                InventoryList[query] = new MiscInvItem(ItemIDTb, CostTB, WeightTb, NotesTb, UsageTb);
+                InventoryList[query] = new MiscInvItem(ItemIDTb, ValueTB, WeightTb, NotesTb, UsageTb);
             }
             else
             {
-                InventoryList.Add(new MiscInvItem(ItemIDTb, CostTB, WeightTb, NotesTb, UsageTb));
+                InventoryList.Add(new MiscInvItem(ItemIDTb, ValueTB, WeightTb, NotesTb, UsageTb));
             }
             AddBtnEnable(true);
             LoadList();
@@ -117,7 +117,7 @@ namespace AddInventoryForm
                 Asterisk(ItemIDLbl.Location);
                 result = true;
             }
-            if (string.IsNullOrWhiteSpace(ValueTb.Text))
+            if (string.IsNullOrWhiteSpace(ValueTB.Text))
             {
                 Asterisk(ValueLbl.Location);
 
@@ -132,18 +132,13 @@ namespace AddInventoryForm
 
             }
 
-            if (string.IsNullOrWhiteSpace(ACTb.Text))
+            if (string.IsNullOrWhiteSpace(UsageTb.Text))
             {
-                Asterisk(ArmorClsLbl.Location);
+                Asterisk(UsageLbl.Location);
 
                 result = true;
 
 
-            }
-            if (ArmorGradeCbo.SelectedIndex == -1)
-            {
-                Asterisk(GradeLbl.Location);
-                result = true;
             }
             return result;
         }
@@ -152,7 +147,7 @@ namespace AddInventoryForm
         {
 
 
-            var CurrentFields = new ArmorItem(ItemIDTb, ValueTb, WeightTb, NotesTb, ACTb, ArmorGradeCbo, PenTb, SpellFailureTb);
+            var CurrentFields =  new MiscInvItem(ItemIDTb, ValueTB, WeightTb, NotesTb, UsageTb);
             if (CurrentRecord > 0)
             {
                 return !Equals(CurrentFields, this);
@@ -220,27 +215,21 @@ namespace AddInventoryForm
             tf = !tf;
             if (tf)
             {
-                ItemIDTb.Text = "Light Chain Mail";
-                ArmorGradeCbo.SelectedIndex = 0;
-                ValueTb.Text = "300";
-                ACTb.Text = "5";
-                WeightTb.Text = "20";
-                SpellFailureTb.Text = "Masterpiece, Something else, textextextextext";
-                PenTb.Text = "Penaultys go here";
-                NotesTb.Text = "test";
+                ItemIDTb.Text = "Wand of healing";
+                ValueTB.Text = "300";
+                WeightTb.Text = "5";
+                UsageTb.Text = "1d4 Heal, 15 feet.";
+                NotesTb.Text = "Found in Britonia";
 
 
             }
             else
             {
-                ItemIDTb.Text = "Heavy Armor";
-                ArmorGradeCbo.SelectedIndex = 2;
-                ValueTb.Text = "12321";
-                ACTb.Text = "26";
-                WeightTb.Text = "20";
-                SpellFailureTb.Text = "Masterpiece, Something else, textextextextext";
-                PenTb.Text = "Penaultys go here";
-                NotesTb.Text = "test";
+                ItemIDTb.Text = "Healing Potion";
+                ValueTB.Text = "50";
+                WeightTb.Text = "1";
+                UsageTb.Text = "Heal 50 HP";
+                NotesTb.Text = "Found in Wurst";
 
 
             }
@@ -249,7 +238,7 @@ namespace AddInventoryForm
         public void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadSelectedRecord();
-            if (ArmorListBox.SelectedIndices.Count > 0)
+            if (MiscListBox.SelectedIndices.Count > 0)
             {
                 EditBtnEnable(true);
                 RemoveBtnEnable(true);
@@ -292,11 +281,11 @@ namespace AddInventoryForm
         private void LoadList()
         {
             CurrentListKeys.Clear();
-            ArmorListBox.Items.Clear();
-            var q = InventoryList.Where(p => p is ArmorItem);
+            MiscListBox.Items.Clear();
+            var q = InventoryList.Where(p => p is MiscInvItem);
             foreach (var item in q.ToList())
             {
-                ArmorListBox.Items.Add(item.ItemID);
+                MiscListBox.Items.Add(item.ItemID);
                 CurrentListKeys.Add(item.Key);
             }
         }
@@ -304,21 +293,19 @@ namespace AddInventoryForm
         private void LoadSelectedRecord()
         {
             int temp = -1;
-            foreach (var item in ArmorListBox.SelectedIndices)
+            foreach (var item in MiscListBox.SelectedIndices)
             {
                 temp = (int)item;
             }
             if (temp != -1)
             {
                 var q = InventoryList.Find(p => p.Key == CurrentListKeys[temp]);
-                var i = (ArmorItem)q;
+                var i = (MiscInvItem)q;
                 CurrentRecord = i.Key;
                 ItemIDTb.Text = i.ItemID;
-                ValueTb.Text = i.Value.ToString();
+                ValueTB.Text = i.Value.ToString();
                 WeightTb.Text = i.Weight.ToString();
-                ACTb.Text = i.BonusAC.ToString();
-                ArmorGradeCbo.SelectedIndex = (int)i.ArmourGrade;
-                SpellFailureTb.Text = i.SpellFaliure;
+                UsageTb.Text = i.Usage;
                 NotesTb.Text = i.Notes;
 
             }

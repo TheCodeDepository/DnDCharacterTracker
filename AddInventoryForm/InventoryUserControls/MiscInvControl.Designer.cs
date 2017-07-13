@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WeaponListBox = new System.Windows.Forms.ListView();
+            this.MiscListBox = new System.Windows.Forms.ListView();
             this.ItemIDColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NotesTb = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.NotesLbl = new System.Windows.Forms.Label();
             this.ItemIDTb = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ItemIDLbl = new System.Windows.Forms.Label();
             this.WeightTb = new System.Windows.Forms.TextBox();
-            this.CostTB = new System.Windows.Forms.TextBox();
+            this.ValueTB = new System.Windows.Forms.TextBox();
             this.UsageTb = new System.Windows.Forms.TextBox();
-            this.UsageLb = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.UsageLbl = new System.Windows.Forms.Label();
+            this.WeightLbl = new System.Windows.Forms.Label();
+            this.ValueLbl = new System.Windows.Forms.Label();
             this.FieldsPanel = new System.Windows.Forms.Panel();
             this.FieldsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // WeaponListBox
+            // MiscListBox
             // 
-            this.WeaponListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MiscListBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ItemIDColumn});
-            this.WeaponListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.WeaponListBox.Location = new System.Drawing.Point(3, 3);
-            this.WeaponListBox.Name = "WeaponListBox";
-            this.WeaponListBox.Size = new System.Drawing.Size(253, 480);
-            this.WeaponListBox.TabIndex = 57;
-            this.WeaponListBox.UseCompatibleStateImageBehavior = false;
-            this.WeaponListBox.View = System.Windows.Forms.View.Details;
+            this.MiscListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.MiscListBox.Location = new System.Drawing.Point(3, 3);
+            this.MiscListBox.Name = "MiscListBox";
+            this.MiscListBox.Size = new System.Drawing.Size(253, 480);
+            this.MiscListBox.TabIndex = 57;
+            this.MiscListBox.UseCompatibleStateImageBehavior = false;
+            this.MiscListBox.View = System.Windows.Forms.View.Details;
+            this.MiscListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+            this.MiscListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDoubleClick);
             // 
             // ItemIDColumn
             // 
@@ -69,16 +71,16 @@
             this.NotesTb.Size = new System.Drawing.Size(262, 108);
             this.NotesTb.TabIndex = 56;
             // 
-            // label8
+            // NotesLbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(286, 208);
-            this.label8.Margin = new System.Windows.Forms.Padding(10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Notes:";
+            this.NotesLbl.AutoSize = true;
+            this.NotesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.NotesLbl.Location = new System.Drawing.Point(286, 208);
+            this.NotesLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.NotesLbl.Name = "NotesLbl";
+            this.NotesLbl.Size = new System.Drawing.Size(49, 17);
+            this.NotesLbl.TabIndex = 55;
+            this.NotesLbl.Text = "Notes:";
             // 
             // ItemIDTb
             // 
@@ -87,16 +89,16 @@
             this.ItemIDTb.Size = new System.Drawing.Size(121, 20);
             this.ItemIDTb.TabIndex = 54;
             // 
-            // label7
+            // ItemIDLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(280, 22);
-            this.label7.Margin = new System.Windows.Forms.Padding(10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 17);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Item ID:";
+            this.ItemIDLbl.AutoSize = true;
+            this.ItemIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ItemIDLbl.Location = new System.Drawing.Point(280, 22);
+            this.ItemIDLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.ItemIDLbl.Name = "ItemIDLbl";
+            this.ItemIDLbl.Size = new System.Drawing.Size(55, 17);
+            this.ItemIDLbl.TabIndex = 53;
+            this.ItemIDLbl.Text = "Item ID:";
             // 
             // WeightTb
             // 
@@ -105,12 +107,12 @@
             this.WeightTb.Size = new System.Drawing.Size(121, 20);
             this.WeightTb.TabIndex = 52;
             // 
-            // CostTB
+            // ValueTB
             // 
-            this.CostTB.Location = new System.Drawing.Point(3, 40);
-            this.CostTB.Name = "CostTB";
-            this.CostTB.Size = new System.Drawing.Size(121, 20);
-            this.CostTB.TabIndex = 49;
+            this.ValueTB.Location = new System.Drawing.Point(3, 40);
+            this.ValueTB.Name = "ValueTB";
+            this.ValueTB.Size = new System.Drawing.Size(121, 20);
+            this.ValueTB.TabIndex = 49;
             // 
             // UsageTb
             // 
@@ -120,45 +122,45 @@
             this.UsageTb.Size = new System.Drawing.Size(262, 57);
             this.UsageTb.TabIndex = 47;
             // 
-            // UsageLb
+            // UsageLbl
             // 
-            this.UsageLb.AutoSize = true;
-            this.UsageLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.UsageLb.Location = new System.Drawing.Point(282, 134);
-            this.UsageLb.Margin = new System.Windows.Forms.Padding(10);
-            this.UsageLb.Name = "UsageLb";
-            this.UsageLb.Size = new System.Drawing.Size(53, 17);
-            this.UsageLb.TabIndex = 46;
-            this.UsageLb.Text = "Usage:";
+            this.UsageLbl.AutoSize = true;
+            this.UsageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.UsageLbl.Location = new System.Drawing.Point(282, 134);
+            this.UsageLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.UsageLbl.Name = "UsageLbl";
+            this.UsageLbl.Size = new System.Drawing.Size(53, 17);
+            this.UsageLbl.TabIndex = 46;
+            this.UsageLbl.Text = "Usage:";
             // 
-            // label5
+            // WeightLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(279, 96);
-            this.label5.Margin = new System.Windows.Forms.Padding(10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Weight:";
+            this.WeightLbl.AutoSize = true;
+            this.WeightLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.WeightLbl.Location = new System.Drawing.Point(279, 96);
+            this.WeightLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.WeightLbl.Name = "WeightLbl";
+            this.WeightLbl.Size = new System.Drawing.Size(56, 17);
+            this.WeightLbl.TabIndex = 45;
+            this.WeightLbl.Text = "Weight:";
             // 
-            // label1
+            // ValueLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(295, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Cost:";
+            this.ValueLbl.AutoSize = true;
+            this.ValueLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ValueLbl.Location = new System.Drawing.Point(287, 59);
+            this.ValueLbl.Margin = new System.Windows.Forms.Padding(10);
+            this.ValueLbl.Name = "ValueLbl";
+            this.ValueLbl.Size = new System.Drawing.Size(48, 17);
+            this.ValueLbl.TabIndex = 41;
+            this.ValueLbl.Text = "Value:";
             // 
             // FieldsPanel
             // 
             this.FieldsPanel.Controls.Add(this.ItemIDTb);
             this.FieldsPanel.Controls.Add(this.UsageTb);
             this.FieldsPanel.Controls.Add(this.NotesTb);
-            this.FieldsPanel.Controls.Add(this.CostTB);
+            this.FieldsPanel.Controls.Add(this.ValueTB);
             this.FieldsPanel.Controls.Add(this.WeightTb);
             this.FieldsPanel.Location = new System.Drawing.Point(340, 18);
             this.FieldsPanel.Name = "FieldsPanel";
@@ -170,14 +172,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.FieldsPanel);
-            this.Controls.Add(this.WeaponListBox);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.UsageLb);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.MiscListBox);
+            this.Controls.Add(this.NotesLbl);
+            this.Controls.Add(this.ItemIDLbl);
+            this.Controls.Add(this.UsageLbl);
+            this.Controls.Add(this.WeightLbl);
+            this.Controls.Add(this.ValueLbl);
             this.Name = "MiscInvControl";
             this.Size = new System.Drawing.Size(615, 485);
+            this.Load += new System.EventHandler(this.Panel_Load);
             this.FieldsPanel.ResumeLayout(false);
             this.FieldsPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -187,18 +190,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView WeaponListBox;
+        private System.Windows.Forms.ListView MiscListBox;
         private System.Windows.Forms.ColumnHeader ItemIDColumn;
         private System.Windows.Forms.TextBox NotesTb;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label NotesLbl;
         private System.Windows.Forms.TextBox ItemIDTb;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ItemIDLbl;
         private System.Windows.Forms.TextBox WeightTb;
-        private System.Windows.Forms.TextBox CostTB;
+        private System.Windows.Forms.TextBox ValueTB;
         private System.Windows.Forms.TextBox UsageTb;
-        private System.Windows.Forms.Label UsageLb;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UsageLbl;
+        private System.Windows.Forms.Label WeightLbl;
+        private System.Windows.Forms.Label ValueLbl;
         private System.Windows.Forms.Panel FieldsPanel;
     }
 }
