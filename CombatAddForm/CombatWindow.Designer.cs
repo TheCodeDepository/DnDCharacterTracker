@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Experience = new System.Windows.Forms.TextBox();
             this.UnitIDFix = new System.Windows.Forms.TextBox();
             this.GoldGained = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.expLbl = new System.Windows.Forms.Label();
+            this.unitIDLbl = new System.Windows.Forms.Label();
+            this.goldLbl = new System.Windows.Forms.Label();
+            this.lootLbl = new System.Windows.Forms.Label();
             this.LootGrid = new System.Windows.Forms.DataGridView();
             this.Loot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BattleControlGrp = new System.Windows.Forms.GroupBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
-            this.TestDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LootGrid)).BeginInit();
             this.BattleControlGrp.SuspendLayout();
             this.SuspendLayout();
@@ -70,45 +69,45 @@
             this.GoldGained.Size = new System.Drawing.Size(251, 23);
             this.GoldGained.TabIndex = 2;
             // 
-            // label1
+            // expLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(10, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Experience :";
+            this.expLbl.AutoSize = true;
+            this.expLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.expLbl.Location = new System.Drawing.Point(10, 41);
+            this.expLbl.Name = "expLbl";
+            this.expLbl.Size = new System.Drawing.Size(86, 17);
+            this.expLbl.TabIndex = 3;
+            this.expLbl.Text = "Experience :";
             // 
-            // label2
+            // unitIDLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(38, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Unit ID :";
+            this.unitIDLbl.AutoSize = true;
+            this.unitIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.unitIDLbl.Location = new System.Drawing.Point(38, 12);
+            this.unitIDLbl.Name = "unitIDLbl";
+            this.unitIDLbl.Size = new System.Drawing.Size(58, 17);
+            this.unitIDLbl.TabIndex = 4;
+            this.unitIDLbl.Text = "Unit ID :";
             // 
-            // label3
+            // goldLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(50, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Gold :";
+            this.goldLbl.AutoSize = true;
+            this.goldLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.goldLbl.Location = new System.Drawing.Point(50, 70);
+            this.goldLbl.Name = "goldLbl";
+            this.goldLbl.Size = new System.Drawing.Size(46, 17);
+            this.goldLbl.TabIndex = 5;
+            this.goldLbl.Text = "Gold :";
             // 
-            // label4
+            // lootLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(52, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Loot :";
+            this.lootLbl.AutoSize = true;
+            this.lootLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lootLbl.Location = new System.Drawing.Point(52, 99);
+            this.lootLbl.Name = "lootLbl";
+            this.lootLbl.Size = new System.Drawing.Size(44, 17);
+            this.lootLbl.TabIndex = 6;
+            this.lootLbl.Text = "Loot :";
             // 
             // LootGrid
             // 
@@ -116,14 +115,14 @@
             this.LootGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LootGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Loot});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LootGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LootGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.LootGrid.Location = new System.Drawing.Point(99, 96);
             this.LootGrid.Name = "LootGrid";
             this.LootGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -131,7 +130,6 @@
             this.LootGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.LootGrid.Size = new System.Drawing.Size(251, 325);
             this.LootGrid.TabIndex = 3;
-            this.LootGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LootGrid_CellContentClick);
             // 
             // Loot
             // 
@@ -173,29 +171,18 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // TestDetails
-            // 
-            this.TestDetails.Location = new System.Drawing.Point(11, 317);
-            this.TestDetails.Name = "TestDetails";
-            this.TestDetails.Size = new System.Drawing.Size(75, 23);
-            this.TestDetails.TabIndex = 20;
-            this.TestDetails.Text = "Test ";
-            this.TestDetails.UseVisualStyleBackColor = true;
-            this.TestDetails.Click += new System.EventHandler(this.button1_Click);
-            // 
             // CombatWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(361, 434);
-            this.Controls.Add(this.TestDetails);
             this.Controls.Add(this.BattleControlGrp);
             this.Controls.Add(this.LootGrid);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lootLbl);
+            this.Controls.Add(this.goldLbl);
+            this.Controls.Add(this.unitIDLbl);
+            this.Controls.Add(this.expLbl);
             this.Controls.Add(this.GoldGained);
             this.Controls.Add(this.UnitIDFix);
             this.Controls.Add(this.Experience);
@@ -214,15 +201,14 @@
         private System.Windows.Forms.TextBox Experience;
         private System.Windows.Forms.TextBox UnitIDFix;
         private System.Windows.Forms.TextBox GoldGained;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label expLbl;
+        private System.Windows.Forms.Label unitIDLbl;
+        private System.Windows.Forms.Label goldLbl;
+        private System.Windows.Forms.Label lootLbl;
         private System.Windows.Forms.DataGridView LootGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loot;
         private System.Windows.Forms.GroupBox BattleControlGrp;
         private System.Windows.Forms.Button CancelButton;
         public System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button TestDetails;
     }
 }

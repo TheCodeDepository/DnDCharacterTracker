@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,9 +75,6 @@
     </Compile>
     <Compile Include="InventoryUserControls\WeaponInvControl.Designer.cs">
       <DependentUpon>WeaponInvControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InventoryUserControls\InvPanel.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

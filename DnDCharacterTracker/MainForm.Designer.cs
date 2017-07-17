@@ -120,22 +120,6 @@ namespace DnDCharacterTracker
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LevelingGrp = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.GoldTotal = new System.Windows.Forms.TextBox();
-            this.label121 = new System.Windows.Forms.Label();
-            this.ViewButton = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.TotalEXP = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.LevelingList = new System.Windows.Forms.ListView();
-            this.UnitID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Experience = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GoldCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Loot = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LevelTb = new System.Windows.Forms.TextBox();
-            this.LevelLbl = new System.Windows.Forms.Label();
             this.TraitsGrp = new System.Windows.Forms.GroupBox();
             this.panel19 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -225,6 +209,7 @@ namespace DnDCharacterTracker
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.inventoryPreview1 = new DnDCharacterTracker.InventoryPreview();
+            this.CombatPreview = new DnDCharacterTracker.MainFormControls.CombatPreview();
             this.AbilityGrp.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.conScore)).BeginInit();
@@ -238,8 +223,6 @@ namespace DnDCharacterTracker
             this.characterDetailsGrp.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.LevelingGrp.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.TraitsGrp.SuspendLayout();
             this.panel19.SuspendLayout();
             this.CombatStatesGrp.SuspendLayout();
@@ -1123,178 +1106,6 @@ namespace DnDCharacterTracker
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
-            // 
-            // LevelingGrp
-            // 
-            this.LevelingGrp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LevelingGrp.AutoSize = true;
-            this.LevelingGrp.Controls.Add(this.panel2);
-            this.LevelingGrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LevelingGrp.Location = new System.Drawing.Point(803, 22);
-            this.LevelingGrp.Name = "LevelingGrp";
-            this.LevelingGrp.Size = new System.Drawing.Size(374, 331);
-            this.LevelingGrp.TabIndex = 16;
-            this.LevelingGrp.TabStop = false;
-            this.LevelingGrp.Text = "Combat Results";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.GoldTotal);
-            this.panel2.Controls.Add(this.label121);
-            this.panel2.Controls.Add(this.ViewButton);
-            this.panel2.Controls.Add(this.RemoveButton);
-            this.panel2.Controls.Add(this.AddButton);
-            this.panel2.Controls.Add(this.TotalEXP);
-            this.panel2.Controls.Add(this.label118);
-            this.panel2.Controls.Add(this.LevelingList);
-            this.panel2.Controls.Add(this.LevelTb);
-            this.panel2.Controls.Add(this.LevelLbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 22);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(368, 306);
-            this.panel2.TabIndex = 0;
-            // 
-            // GoldTotal
-            // 
-            this.GoldTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.GoldTotal.Location = new System.Drawing.Point(86, 62);
-            this.GoldTotal.Margin = new System.Windows.Forms.Padding(2);
-            this.GoldTotal.Name = "GoldTotal";
-            this.GoldTotal.Size = new System.Drawing.Size(90, 23);
-            this.GoldTotal.TabIndex = 27;
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label121.Location = new System.Drawing.Point(39, 64);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(42, 17);
-            this.label121.TabIndex = 26;
-            this.label121.Text = "Gold:";
-            // 
-            // ViewButton
-            // 
-            this.ViewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.ViewButton.Location = new System.Drawing.Point(287, 61);
-            this.ViewButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ViewButton.Name = "ViewButton";
-            this.ViewButton.Size = new System.Drawing.Size(72, 23);
-            this.ViewButton.TabIndex = 19;
-            this.ViewButton.Text = "View";
-            this.ViewButton.UseVisualStyleBackColor = true;
-            this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.RemoveButton.Location = new System.Drawing.Point(287, 34);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(72, 23);
-            this.RemoveButton.TabIndex = 18;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.AddButton.Location = new System.Drawing.Point(287, 7);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(72, 23);
-            this.AddButton.TabIndex = 17;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // TotalEXP
-            // 
-            this.TotalEXP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TotalEXP.Location = new System.Drawing.Point(86, 35);
-            this.TotalEXP.Margin = new System.Windows.Forms.Padding(2);
-            this.TotalEXP.Name = "TotalEXP";
-            this.TotalEXP.Size = new System.Drawing.Size(69, 23);
-            this.TotalEXP.TabIndex = 23;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label118.Location = new System.Drawing.Point(10, 37);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(71, 17);
-            this.label118.TabIndex = 20;
-            this.label118.Text = "Total Exp:";
-            // 
-            // LevelingList
-            // 
-            this.LevelingList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.LevelingList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LevelingList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.UnitID,
-            this.Experience,
-            this.GoldCol,
-            this.Loot});
-            this.LevelingList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LevelingList.FullRowSelect = true;
-            this.LevelingList.GridLines = true;
-            this.LevelingList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.LevelingList.Location = new System.Drawing.Point(3, 90);
-            this.LevelingList.Name = "LevelingList";
-            this.LevelingList.Size = new System.Drawing.Size(362, 213);
-            this.LevelingList.TabIndex = 16;
-            this.LevelingList.UseCompatibleStateImageBehavior = false;
-            this.LevelingList.View = System.Windows.Forms.View.Details;
-            this.LevelingList.SelectedIndexChanged += new System.EventHandler(this.LevelingList_SelectedIndexChanged);
-            this.LevelingList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LevelingList_KeyDown);
-            this.LevelingList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LevelingList_MouseDoubleClick);
-            // 
-            // UnitID
-            // 
-            this.UnitID.Text = "Unit ID";
-            this.UnitID.Width = 68;
-            // 
-            // Experience
-            // 
-            this.Experience.Text = "Exp";
-            this.Experience.Width = 64;
-            // 
-            // GoldCol
-            // 
-            this.GoldCol.Text = "Gold";
-            this.GoldCol.Width = 66;
-            // 
-            // Loot
-            // 
-            this.Loot.Text = "Loot";
-            this.Loot.Width = 191;
-            // 
-            // LevelTb
-            // 
-            this.LevelTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LevelTb.Location = new System.Drawing.Point(86, 8);
-            this.LevelTb.Margin = new System.Windows.Forms.Padding(2);
-            this.LevelTb.Name = "LevelTb";
-            this.LevelTb.Size = new System.Drawing.Size(34, 23);
-            this.LevelTb.TabIndex = 12;
-            // 
-            // LevelLbl
-            // 
-            this.LevelLbl.AutoSize = true;
-            this.LevelLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.LevelLbl.Location = new System.Drawing.Point(35, 11);
-            this.LevelLbl.Name = "LevelLbl";
-            this.LevelLbl.Size = new System.Drawing.Size(46, 17);
-            this.LevelLbl.TabIndex = 13;
-            this.LevelLbl.Text = "Level:";
             // 
             // TraitsGrp
             // 
@@ -2322,16 +2133,26 @@ namespace DnDCharacterTracker
             this.inventoryPreview1.Size = new System.Drawing.Size(370, 370);
             this.inventoryPreview1.TabIndex = 0;
             // 
+            // CombatPreview
+            // 
+            this.CombatPreview.AutoSize = true;
+            this.CombatPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CombatPreview.Location = new System.Drawing.Point(802, 21);
+            this.CombatPreview.Name = "CombatPreview";
+            this.CombatPreview.Size = new System.Drawing.Size(376, 333);
+            this.CombatPreview.TabIndex = 26;
+            this.CombatPreview.TotalEXPProp = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.CombatPreview);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CombatStatesGrp);
             this.Controls.Add(this.TraitsGrp);
-            this.Controls.Add(this.LevelingGrp);
             this.Controls.Add(this.characterDetailsGrp);
             this.Controls.Add(this.AbilityModGroup);
             this.Controls.Add(this.AbilityGrp);
@@ -2356,9 +2177,6 @@ namespace DnDCharacterTracker
             this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.LevelingGrp.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.TraitsGrp.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
@@ -2472,16 +2290,8 @@ namespace DnDCharacterTracker
         private System.Windows.Forms.Label RaceLbl;
         private System.Windows.Forms.ComboBox ClassCombo;
         private System.Windows.Forms.ComboBox RaceCombo;
-        private System.Windows.Forms.GroupBox LevelingGrp;
         private System.Windows.Forms.GroupBox TraitsGrp;
         private System.Windows.Forms.Label moveSpdLbl;
-        
-        private Panel panel2;
-        private Button ViewButton;
-        private Button RemoveButton;
-        private Button AddButton;
-        private TextBox GoldTotal;
-        private Label label121;
         private Panel panel4;
         private Panel panel5;
         private Panel panel3;
@@ -2491,10 +2301,6 @@ namespace DnDCharacterTracker
         private Label label161;
         private Label label160;
         private Label label159;
-        private TextBox TotalEXP;
-        private Label label118;
-        private TextBox LevelTb;
-        private Label LevelLbl;
         private GroupBox CombatStatesGrp;
         private Panel panel8;
         private TableLayoutPanel tableLayoutPanel1;
@@ -2578,16 +2384,12 @@ namespace DnDCharacterTracker
         private Button button5;
         private ColumnHeader Trait;
         private ColumnHeader DetailsCol;
-        private ListView LevelingList;
-        private ColumnHeader UnitID;
-        private ColumnHeader Experience;
-        private ColumnHeader GoldCol;
-        private ColumnHeader Loot;
         private SkillList skillList1;
         private GroupBox groupBox1;
         private Panel panel1;
         private GroupBox groupBox2;
         private InventoryPreview inventoryPreview1;
+        private MainFormControls.CombatPreview CombatPreview;
     }
 }
 

@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Storage
 {
-    [Serializable]
+
     public static class Storage
     {        
-        public static List<GenericValues> inventoryList = new List<GenericValues>();
-        public static List<GenericValues> InventoryList
-        {
-            get { return inventoryList; }
-            set { inventoryList = value; }
-        }
+        public static List<GenericValues> InventoryList = new List<GenericValues>();
+        public static List<CombatRecord> CombatList = new List<CombatRecord>();
+
     }
 }
