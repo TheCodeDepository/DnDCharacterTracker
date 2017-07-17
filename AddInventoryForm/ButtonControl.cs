@@ -19,44 +19,38 @@ namespace AddInventoryForm
 
         }
 
-        public IButtons ButtonInterfaces;
+        public InvPanel CurrentPanel;
 
         private void ButtonControl_Load(object sender, EventArgs e)
         {
-            ButtonEanabler();
+            ButtonEnabler();
 
         }
 
-        private void ButtonEanabler()
+        private void ButtonEnabler()
         {
             RemoveBtnEnb(false);
             SaveBtnEnb(false);
             EditBtnEnb(false);
             AddBtnEnb(true);
             CancelBtnEnb(false);
+            SampleBtnEnb(false);
         }
-
-        public void SubscribeButtons()
-        {
-
-            ButtonInterfaces.SubscribeEdit(EditBtnEnb);
-            ButtonInterfaces.SubscribeSave(SaveBtnEnb);
-            ButtonInterfaces.SubscribeAdd(AddBtnEnb);
-            ButtonInterfaces.SubscribeRemove(RemoveBtnEnb);
-        }
-
 
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            ButtonInterfaces.EditRecord();
-            SaveBtn.Enabled = true;
-            EditBtn.Enabled = false;
+            CurrentPanel.EditRecord();
+            CancelBtnEnb(true);
+            AddBtnEnb(false);
+            SaveBtnEnb(true);
+            EditBtnEnb(false);
+            RemoveBtnEnb(false);
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
         {
-            if (ButtonInterfaces.DataLoss())
+            if (CurrentPanel.DataLoss())
             {
                 var m = MessageBox.Show("Are you sure you wish to exit without saveing your changes?", "Close", MessageBoxButtons.YesNo);
                 if (m == DialogResult.Yes)
@@ -71,41 +65,45 @@ namespace AddInventoryForm
         private void SaveBtn_Click(object sender, EventArgs e)
         {
 
-            if (ButtonInterfaces.SaveRecord())
+            if (CurrentPanel.SaveRecord())
             {
-                SaveBtn.Enabled = false;
-                AddBtn.Enabled = true;
-                ButtonInterfaces.EnableFields(false);
+                CurrentPanel.ClearAsterisks();
+                CancelBtnEnb(false);
+                AddBtnEnb(true);
+                SaveBtnEnb(false);
+                CurrentPanel.EnableFields(false);
             }
         }
 
         private void SampleBtn_Click(object sender, EventArgs e)
         {
-            ButtonInterfaces.SampleInput();
+            CurrentPanel.SampleInput();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            ButtonInterfaces.ClearFields();
-            ButtonInterfaces.EnableFields(false);
+            CurrentPanel.ClearFields();
+            CurrentPanel.EnableFields(false);
             CancelBtnEnb(false);
+            SaveBtnEnb(false);
+            AddBtnEnb(true);
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-
-            ButtonInterfaces.RemoveRecord();
-            RemoveBtn.Enabled = true;
-            EditBtn.Enabled = false;
-
+            CurrentPanel.RemoveRecord();
+            EditBtnEnb(false);
+            RemoveBtnEnb(false);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            SaveBtn.Enabled = true;
-            AddBtn.Enabled = false;
-            EditBtn.Enabled = false;
-            ButtonInterfaces.EnableFields(true);
+            SampleBtnEnb(true);
+            CancelBtnEnb(true);
+            SaveBtnEnb(true);
+            EditBtnEnb(false);
+            AddBtnEnb(false);           
+            CurrentPanel.EnableFields(true);
 
         }
 
@@ -135,6 +133,12 @@ namespace AddInventoryForm
             CancelBtn.Enabled = b;
 
         }
+        private void SampleBtnEnb(bool b)
+        {
+            SampleBtn.Enabled = b;
+
+        }
+
 
 
     }

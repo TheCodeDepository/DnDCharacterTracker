@@ -21,11 +21,7 @@ namespace DnDCharacterTracker
 
         private int maxScore = 100;
         //private Statistics newCharacterSheet;
-        private NumericUpDown[] ranks;
-        private TextBox[] abiMods;
-        private TextBox[] miscMods;
-        private TextBox[] TotMods;
-        private TextBox[] AbilityModfiers;
+
         private List<string[]> CombatResults = new List<string[]>(); //All battle history in string[] form.
 
 
@@ -103,51 +99,51 @@ namespace DnDCharacterTracker
 
         }
 
-        public int GetSetRanks(int i)
-        {
-            return (int)ranks[i].Value;
-        }
-        public void GetSetRanks(int i, int value)
-        {
-            if (i < ranks.Length && value >= 0)
-            {
-                ranks[i].Value = value;
-            }
-        }
-        public int GetSetAbiSkillsMods(int i)
-        {
-            return GetInteger(abiMods[i].Text);
-        }
-        public void GetSetAbiSkillsMods(int i, int value)
-        {
-            abiMods[i].Text = value.ToString();
-        }
-        public int GetSetMiscMods(int i)
-        {
-            return GetInteger(miscMods[i].Text);
-        }
-        public void GetSetMiscMods(int i, int value)
-        {
-            if (i < ranks.Length)
-            {
-                miscMods[i].Text = value.ToString();
-            }
-        }
-        public int GetSetTotMods(int i)
-        {
-            return GetInteger(TotMods[i].Text);
-        }
-        public void GetSetTotMods(int i, int value)
-        {
-            if (i < ranks.Length)
-            {
-                TotMods[i].Text = value.ToString();
-            }
-        }
-        public int GetAbilityModifier(int i)
-        {
-            return GetInteger(AbilityModfiers[i].Text);
-        }
+        //public int GetSetRanks(int i)
+        //{
+        //    return (int)ranks[i].Value;
+        //}
+        //public void GetSetRanks(int i, int value)
+        //{
+        //    if (i < ranks.Length && value >= 0)
+        //    {
+        //        ranks[i].Value = value;
+        //    }
+        //}
+        //public int GetSetAbiSkillsMods(int i)
+        //{
+        //    return GetInteger(abiMods[i].Text);
+        //}
+        //public void GetSetAbiSkillsMods(int i, int value)
+        //{
+        //    abiMods[i].Text = value.ToString();
+        //}
+        //public int GetSetMiscMods(int i)
+        //{
+        //    return GetInteger(miscMods[i].Text);
+        //}
+        //public void GetSetMiscMods(int i, int value)
+        //{
+        //    if (i < ranks.Length)
+        //    {
+        //        miscMods[i].Text = value.ToString();
+        //    }
+        //}
+        //public int GetSetTotMods(int i)
+        //{
+        //    return GetInteger(TotMods[i].Text);
+        //}
+        //public void GetSetTotMods(int i, int value)
+        //{
+        //    if (i < ranks.Length)
+        //    {
+        //        TotMods[i].Text = value.ToString();
+        //    }
+        //}
+        //public int GetAbilityModifier(int i)
+        //{
+        //    return GetInteger(AbilityModfiers[i].Text);
+        //}
 
 
 
@@ -312,8 +308,8 @@ namespace DnDCharacterTracker
         {
             for (int i = 0; i <= 34; i++)
             {
-                GetSetAbiSkillsMods(i, GetAbilityModifier(i));
-                GetSetTotMods(i, (GetSetAbiSkillsMods(i) + GetSetMiscMods(i)));
+                //GetSetAbiSkillsMods(i, GetAbilityModifier(i));
+                //GetSetTotMods(i, (GetSetAbiSkillsMods(i) + GetSetMiscMods(i)));
             }
         }
 
