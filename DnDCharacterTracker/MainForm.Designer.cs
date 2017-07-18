@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-namespace DnDCharacterTracker
+namespace MainForm
 {
     partial class MainForm
     {
@@ -204,12 +204,12 @@ namespace DnDCharacterTracker
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
-            this.skillList1 = new DnDCharacterTracker.SkillList();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ClassSkillsGrp = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.skillList1 = new MainFormPreviewCtls.SkillList();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.inventoryPreview1 = new DnDCharacterTracker.InventoryPreview();
-            this.CombatPreview = new DnDCharacterTracker.MainFormControls.CombatPreview();
+            this.CombatPreview = new MainFormPreviewCtls.CombatPreview();
+            this.inventoryPreview1 = new MainFormPreviewCtls.InventoryPreview();
             this.AbilityGrp.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.conScore)).BeginInit();
@@ -241,7 +241,7 @@ namespace DnDCharacterTracker
             this.panel18.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.ClassSkillsGrp.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -2085,24 +2085,16 @@ namespace DnDCharacterTracker
             this.textBox23.Size = new System.Drawing.Size(65, 26);
             this.textBox23.TabIndex = 17;
             // 
-            // skillList1
+            // ClassSkillsGrp
             // 
-            this.skillList1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.skillList1.Location = new System.Drawing.Point(0, 0);
-            this.skillList1.Name = "skillList1";
-            this.skillList1.Size = new System.Drawing.Size(420, 364);
-            this.skillList1.TabIndex = 22;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(368, 360);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 392);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.ClassSkillsGrp.Controls.Add(this.panel1);
+            this.ClassSkillsGrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ClassSkillsGrp.Location = new System.Drawing.Point(368, 360);
+            this.ClassSkillsGrp.Name = "ClassSkillsGrp";
+            this.ClassSkillsGrp.Size = new System.Drawing.Size(429, 392);
+            this.ClassSkillsGrp.TabIndex = 23;
+            this.ClassSkillsGrp.TabStop = false;
+            this.ClassSkillsGrp.Text = "Class Skills";
             // 
             // panel1
             // 
@@ -2112,6 +2104,14 @@ namespace DnDCharacterTracker
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 367);
             this.panel1.TabIndex = 0;
+            // 
+            // skillList1
+            // 
+            this.skillList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.skillList1.Location = new System.Drawing.Point(1, -1);
+            this.skillList1.Name = "skillList1";
+            this.skillList1.Size = new System.Drawing.Size(421, 367);
+            this.skillList1.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -2124,15 +2124,6 @@ namespace DnDCharacterTracker
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inventory";
             // 
-            // inventoryPreview1
-            // 
-            this.inventoryPreview1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.inventoryPreview1.Location = new System.Drawing.Point(1, 22);
-            this.inventoryPreview1.Margin = new System.Windows.Forms.Padding(4);
-            this.inventoryPreview1.Name = "inventoryPreview1";
-            this.inventoryPreview1.Size = new System.Drawing.Size(370, 370);
-            this.inventoryPreview1.TabIndex = 0;
-            // 
             // CombatPreview
             // 
             this.CombatPreview.AutoSize = true;
@@ -2143,6 +2134,15 @@ namespace DnDCharacterTracker
             this.CombatPreview.TabIndex = 26;
             this.CombatPreview.TotalEXPProp = 0;
             // 
+            // inventoryPreview1
+            // 
+            this.inventoryPreview1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.inventoryPreview1.Location = new System.Drawing.Point(7, 24);
+            this.inventoryPreview1.Margin = new System.Windows.Forms.Padding(4);
+            this.inventoryPreview1.Name = "inventoryPreview1";
+            this.inventoryPreview1.Size = new System.Drawing.Size(360, 357);
+            this.inventoryPreview1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2150,7 +2150,7 @@ namespace DnDCharacterTracker
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.CombatPreview);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.ClassSkillsGrp);
             this.Controls.Add(this.CombatStatesGrp);
             this.Controls.Add(this.TraitsGrp);
             this.Controls.Add(this.characterDetailsGrp);
@@ -2210,7 +2210,7 @@ namespace DnDCharacterTracker
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.ClassSkillsGrp.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2384,12 +2384,12 @@ namespace DnDCharacterTracker
         private Button button5;
         private ColumnHeader Trait;
         private ColumnHeader DetailsCol;
-        private SkillList skillList1;
-        private GroupBox groupBox1;
-        private Panel panel1;
+        private GroupBox ClassSkillsGrp;
         private GroupBox groupBox2;
-        private InventoryPreview inventoryPreview1;
-        private MainFormControls.CombatPreview CombatPreview;
+        private MainFormPreviewCtls.CombatPreview  CombatPreview;
+        private Panel panel1;
+        private MainFormPreviewCtls.SkillList skillList1;
+        private MainFormPreviewCtls.InventoryPreview inventoryPreview1;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 
 
-namespace AddInventoryForm
+namespace InventoryForm
 {
     public static class Program
     {
@@ -18,7 +18,7 @@ namespace AddInventoryForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryForm());
+            Application.Run(new inventoryForm());
 
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DnDCharacterTracker.Properties
+namespace MainForm.Properties
 {
 
 

@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Storage;
 
-namespace CombatAddForm
+namespace CombatForm
 {
     public partial class CombatWindow : Form
     {
         private List<CombatRecord> MainList = Storage.Storage.CombatList;
+        private List<Label> Asterisks = new List<Label>();
+
         public CombatWindow()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace CombatAddForm
         {
             InitializeComponent();
             cRecord = key;
+            AddButton.Text = "Save";
         }
         private int cRecord = -1;
         private static void MessageBoxInvalidInput(string field)
@@ -35,13 +38,13 @@ namespace CombatAddForm
             if (string.IsNullOrEmpty(UnitIDFix.Text))
             {
                 MessageBoxInvalidInput("Unit ID");
-                unitIDLbl.Asterisk();
+                Asterisks.Add(unitIDLbl.Asterisk());
                 return false;
             }
             if (!(int.TryParse(Experience.Text, out result)))
             {
                 MessageBoxInvalidInput("Experience");
-                expLbl.Asterisk();
+                Asterisks.Add(expLbl.Asterisk());
 
                 return false;
 
@@ -111,10 +114,17 @@ namespace CombatAddForm
         }
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (CheckTextBoxes())
+            var temp = new CombatRecord(UnitIDFix, Experience, GoldGained, GetLootList());
+            Asterisks.Clear();
+            if (cRecord != -1)
             {
-                MainList.Add(new CombatRecord(UnitIDFix, Experience, GoldGained, GetLootList()));
-
+                var q = MainList.FindIndex(p => p.key == cRecord);
+                MainList.RemoveAt(q);
+                MainList.Add(temp);
+            }
+            else if (CheckTextBoxes())
+            {
+                MainList.Add(temp);                
             }
 
         }

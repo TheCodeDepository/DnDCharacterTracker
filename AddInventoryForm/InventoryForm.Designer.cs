@@ -1,6 +1,6 @@
-﻿namespace AddInventoryForm
+﻿namespace InventoryForm
 {
-    partial class InventoryForm
+    partial class inventoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventoryForm));
             this.InvMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,12 +61,12 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InvTabControl = new System.Windows.Forms.TabControl();
             this.WeapTab = new System.Windows.Forms.TabPage();
-            this.weaponInvControl1 = new AddInventoryForm.WeaponInvControl();
+            this.weaponInvControl1 = new UserConCollection.InventoryUserControls.WeaponInvControl();
             this.ArmorTab = new System.Windows.Forms.TabPage();
-            this.armorInvControl1 = new AddInventoryForm.ArmorInvControl();
+            this.armorInvControl1 = new UserConCollection.InventoryUserControls.ArmorInvControl();
             this.MiscTab = new System.Windows.Forms.TabPage();
-            this.buttonControl1 = new AddInventoryForm.ButtonControl();
-            this.miscInvControl1 = new AddInventoryForm.MiscInvControl();
+            this.buttonControl1 = new UserConCollection.ButtonControl();
+            this.miscInvControl1 = new UserConCollection.InventoryUserControls.MiscInvControl();
             this.InvMenuStrip.SuspendLayout();
             this.InvTabControl.SuspendLayout();
             this.WeapTab.SuspendLayout();
@@ -434,12 +434,12 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TabControl InvTabControl;
         private System.Windows.Forms.TabPage WeapTab;
-        private WeaponInvControl weaponInvControl1;
+        private UserConCollection.InventoryUserControls.WeaponInvControl weaponInvControl1;
         private System.Windows.Forms.TabPage ArmorTab;
-        private ArmorInvControl armorInvControl1;
+        private UserConCollection.InventoryUserControls.ArmorInvControl armorInvControl1;
         private System.Windows.Forms.TabPage MiscTab;
-        private ButtonControl buttonControl1;
-        private MiscInvControl miscInvControl1;
+        private UserConCollection.ButtonControl buttonControl1;
+        private UserConCollection.InventoryUserControls.MiscInvControl miscInvControl1;
     }
 }
 #endregion

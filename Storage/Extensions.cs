@@ -39,7 +39,7 @@ namespace Storage
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
         }
 
-        public static void Asterisk(this Label label)
+        public static Label Asterisk(this Label label)
         {
             var p = label.Location;
             Label l = new Label();
@@ -47,8 +47,9 @@ namespace Storage
             l.Text = @"*";
             l.ForeColor = Color.Red;
             l.Font = new Font("Microsoft Sans Serif", 10);
-            Asterisks.Add(l);
-            label.Parent.Controls.Add(l);
+            
+            
+            return l;
         }
 
 

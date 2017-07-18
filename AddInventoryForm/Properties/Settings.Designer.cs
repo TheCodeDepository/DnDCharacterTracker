@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AddInventoryForm.Properties
+namespace InventoryForm.Properties
 {
 
 

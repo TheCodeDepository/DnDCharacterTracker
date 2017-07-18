@@ -1,4 +1,4 @@
-﻿namespace CombatAddForm
+﻿namespace CombatForm
 {
     partial class CombatWindow
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CombatAddForm.Properties
+namespace CombatForm.Properties
 {
 
 

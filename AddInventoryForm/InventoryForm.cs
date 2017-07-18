@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Storage;
+using UserConCollection;
 
-namespace AddInventoryForm
+namespace InventoryForm
 {
     public enum Tab
     {
         Weap,Armor,Misc
     }
 
-    public partial class InventoryForm : Form
+    public partial class inventoryForm : Form
     {
-        public InventoryForm()
+        public inventoryForm()
         {
             InitializeComponent();
         }
