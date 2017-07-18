@@ -73,6 +73,7 @@
             this.ModTb.TabIndex = 324;
             this.ModTb.Text = "-5";
             this.ModTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ModTb.TextChanged += new System.EventHandler(this.ModTb_TextChanged);
             this.ModTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModTb_KeyPress);
             // 
             // TotalTb
@@ -106,6 +107,7 @@
             this.MiscMod.TabIndex = 321;
             this.MiscMod.Text = "0";
             this.MiscMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MiscMod.TextChanged += new System.EventHandler(this.ModTb_TextChanged);
             this.MiscMod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModTb_KeyPress);
             // 
             // ModTypeLbl
