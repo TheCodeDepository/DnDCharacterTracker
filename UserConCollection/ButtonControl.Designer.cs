@@ -41,7 +41,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.EditBtn);
             this.groupBox1.Controls.Add(this.CloseBtn);
@@ -58,7 +58,7 @@
             // 
             // EditBtn
             // 
-            this.EditBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.EditBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.EditBtn.Location = new System.Drawing.Point(7, 39);
             this.EditBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -71,7 +71,7 @@
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.CloseBtn.Location = new System.Drawing.Point(7, 474);
             this.CloseBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -84,7 +84,7 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.SaveBtn.Location = new System.Drawing.Point(7, 66);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -97,7 +97,7 @@
             // 
             // SampleBtn
             // 
-            this.SampleBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SampleBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SampleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.SampleBtn.Location = new System.Drawing.Point(7, 142);
             this.SampleBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -110,7 +110,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.CancelBtn.Location = new System.Drawing.Point(7, 447);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -123,7 +123,7 @@
             // 
             // RemoveBtn
             // 
-            this.RemoveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RemoveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.RemoveBtn.Location = new System.Drawing.Point(7, 93);
             this.RemoveBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -136,7 +136,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.AddBtn.Location = new System.Drawing.Point(7, 12);
             this.AddBtn.Margin = new System.Windows.Forms.Padding(2);

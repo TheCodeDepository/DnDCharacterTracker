@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using Storage;
 
 namespace MainFormPreviewCtls
-{
+{ 
+    
     public partial class SkillControl : UserControl
     {
         
@@ -19,6 +20,7 @@ namespace MainFormPreviewCtls
         {
             InitializeComponent();
         }
+
         public string SkilName { get { return SkillName.Text; } set { SkillName.Text = value; } }
         public int RankTextBox { get { return RankTb.Text.ToInt(); } set { RankTb.Text = value.ToString(); } }
         public int MiscModifier { get { return MiscMod.Text.ToInt(); } private set {  MiscMod.Text = value.ToString(); } }
@@ -27,21 +29,21 @@ namespace MainFormPreviewCtls
         private int Total { get { return TotalTb.Text.ToInt(); } set { TotalTb.Text = value.ToString(); } }
         private string AbilityModType { get { return ModTypeLbl.Text; } set { ModTypeLbl.Text = value; } }
         private int AbilityModifier { get { return ModTb.Text.ToInt(); } set { ModTb.Text = value.ToString(); } }
-
+        private bool ClassSkill { get; set; }
 
 
         Func<int> AbiMod;
 
-        public SkillControl(string name, int rank, int miscMod, string modLbl, Func<int> Mod)
+        public SkillControl(string name, int rank, string modLbl, Func<int> Mod,bool classSkill)
         {
             InitializeComponent();
             SkilName = name;
             RankTextBox = rank;
-            MiscModifier = miscMod;
             AbiMod = Mod;
             AbilityModType = modLbl;
+            ClassSkill = classSkill;
         }
-        public void RefreshTotal()
+        public void RefreshAbilityModifier()
         {
             AbilityModifier = AbiMod();
         }
@@ -77,12 +79,27 @@ namespace MainFormPreviewCtls
 
         private void ModTb_TextChanged(object sender, EventArgs e)
         {
-            RefreshTotal();
+            int misc = 0;
+            if (ClassSkill is true)
+            {
+                if (RankTextBox > 0)
+                {
+                    misc += 3;
+                    misc += RankTextBox;
+                    MiscModifier = misc;
+                    Total = misc + AbilityModifier;
+
+                }
+
+            }
+            else
+            {
+                MiscModifier = RankTextBox;
+                Total = misc + AbilityModifier;
+            }
+            
         }
     }
-    public enum ModTypes
-    {
-        STR,DEX,CON,INT,WIS,CHA
-    }
+
 
 }

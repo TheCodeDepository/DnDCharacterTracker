@@ -86,6 +86,10 @@
       <Project>{189c799b-e172-4296-bd7a-e0ed03663373}</Project>
       <Name>Storage</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UserConCollection\UserConCollection.csproj">
+      <Project>{53646E57-4B13-48B0-B1D6-8351DEF656AD}</Project>
+      <Name>UserConCollection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

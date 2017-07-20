@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Storage;
-
+using MainFormPreviewCtls;
 
 using System.Windows.Forms;
 
@@ -24,12 +24,30 @@ namespace MainForm
             this.MinimumSize = new Size(1200, 800);
             this.MaximumSize = new Size(1200, 800);
 
+
+
         }
 
         private void OnLoad(object sender, EventArgs e)
-        { 
+        {
+            SkillList.SubsribeButtons(
+                characterStats1.TotalStr,
+                characterStats1.TotalDex,
+                characterStats1.TotalCon,
+                characterStats1.TotalInt,
+                characterStats1.TotalWis,
+                characterStats1.TotalCha
+                );
+            characterStats1.SubRefresh(skillList1.RefreshMods);
 
-           
+            Storage.Storage.Skills.Add(new SkillType("Flying and shit", "You can fly", Mod.STR, true));
+            Storage.Storage.Skills.Add(new SkillType("Procrastination", "You can fly", Mod.STR, false));
+            Storage.Storage.Skills.Add(new SkillType("Wasted Time tes", "You can fly", Mod.DEX, true));
+            Storage.Storage.Skills.Add(new SkillType("Salad Muncherer", "You can fly", Mod.DEX, false));
+            Storage.Storage.Skills.Add(new SkillType("Weliwopter flyi", "You can fly", Mod.STR, true));
+            skillList1.GenControls();
+            skillList1.DrawList();
+
         }
 
         private void EnablePanelContents(Form form, bool enabled)
@@ -40,103 +58,16 @@ namespace MainForm
             }
         }
 
-        public string ChangeStat(decimal Value1)
-        {
-            int result = (int)Math.Floor((decimal)((Value1 - 10) / 2));
-            return string.Format("{0}", result);
-        }    
-
-        private void strScore_ValueChanged(object sender, EventArgs e)
-        {          
-
-        }
-
-        private void strMod_ValueChanged(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void dexScore_ValueChanged(object sender, EventArgs e)
-        {         
-
-        }
-
-        private void dexMod_ValueChanged_1(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void conScore_ValueChanged(object sender, EventArgs e)
-        {  
-
-        }
-
-        private void conMod_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void intScore_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void intMod_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void wisScore_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void wisMod_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chaScore_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chaMod_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void RaceCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void CharDetails_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-  
-
-        }
-
         private void ClassCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-
-
-
-        private void SkillsCheck_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        List<string[]> InventoryListMain = new List<string[]>();
 
 
 

@@ -15,10 +15,8 @@ namespace UserConCollection
 
 
         void SubscribeEdit(Action<bool> Method);
-        void SubscribeSave(Action<bool> Method);
-        void SubscribeAdd(Action<bool> Method);
         void SubscribeRemove(Action<bool> Method);
-        void SampleRemove(Action<bool> Method);
+
         void ClearFields();
         void EditRecord();
         bool DataLoss();

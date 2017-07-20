@@ -42,17 +42,17 @@ namespace UserConCollection.InventoryUserControls
             EditBtnEnable = Method;
         }
 
-        Action<bool> SaveBtnEnable;
-        public void SubscribeSave(Action<bool> Method)
-        {
-            SaveBtnEnable = Method;
-        }
+        //Action<bool> SaveBtnEnable;
+        //public void SubscribeSave(Action<bool> Method)
+        //{
+        //    SaveBtnEnable = Method;
+        //}
 
-        Action<bool> AddBtnEnable;
-        public void SubscribeAdd(Action<bool> Method)
-        {
-            AddBtnEnable = Method;
-        }
+        //Action<bool> AddBtnEnable;
+        //public void SubscribeAdd(Action<bool> Method)
+        //{
+        //    AddBtnEnable = Method;
+        //}
 
         Action<bool> RemoveBtnEnable;
         public void SubscribeRemove(Action<bool> Method)
@@ -60,11 +60,11 @@ namespace UserConCollection.InventoryUserControls
             RemoveBtnEnable = Method;
         }
 
-        Action<bool> SampleBtnEnable;
-        public void SampleRemove(Action<bool> Method)
-        {
-            SampleBtnEnable = Method;
-        }
+        //Action<bool> SampleBtnEnable;
+        //public void SampleRemove(Action<bool> Method)
+        //{
+        //    SampleBtnEnable = Method;
+        //}
 
         public void EnableFields(bool val)
         {
@@ -84,6 +84,7 @@ namespace UserConCollection.InventoryUserControls
             }
 
         }
+
         public bool SaveRecord()
         {
             if (Asterisks.Count > 0)
@@ -107,7 +108,7 @@ namespace UserConCollection.InventoryUserControls
             {
                 InventoryList.Add(new ArmorItem(ItemIDTb, ValueTb, WeightTb, NotesTb, ACTb, ArmorGradeCbo, PenTb, SpellFailureTb));
             }
-            AddBtnEnable(true);
+
             LoadList();
             ClearFields();            
             return true;
@@ -185,19 +186,19 @@ namespace UserConCollection.InventoryUserControls
             }
             return false;
         }
+
         public void RemoveRecord()
         {
             var q = InventoryList.FindIndex(p => p.Key == CurrentRecord);
             InventoryList.RemoveAt(q);
             LoadList();
         }
+
         public void EditRecord()
         {
-            SaveBtnEnable(true);
-            EditBtnEnable(false);
-            AddBtnEnable(false);
+
             LoadSelectedRecord();
-            EnableFields(true);
+
         }
 
         public void ClearFields()

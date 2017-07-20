@@ -39,8 +39,6 @@ namespace UserConCollection
         public void SubscribeButtons()
         {
             ButtonInterfaces.SubscribeEdit(EditBtnEnb);
-            ButtonInterfaces.SubscribeSave(SaveBtnEnb);
-            ButtonInterfaces.SubscribeAdd(AddBtnEnb);
             ButtonInterfaces.SubscribeRemove(RemoveBtnEnb);
         }
 
@@ -51,6 +49,9 @@ namespace UserConCollection
             ButtonInterfaces.EditRecord();
             SaveBtn.Enabled = true;
             EditBtn.Enabled = false;
+            AddBtn.Enabled = false;
+            RemoveBtn.Enabled = false;
+            ButtonInterfaces.EnableFields(true);
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -87,7 +88,9 @@ namespace UserConCollection
         {
             ButtonInterfaces.ClearFields();
             ButtonInterfaces.EnableFields(false);
-            CancelBtnEnb(false);
+            CancelBtn.Enabled = false;
+            SaveBtn.Enabled = false;
+            AddBtn.Enabled = true;
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
@@ -104,6 +107,7 @@ namespace UserConCollection
             SaveBtn.Enabled = true;
             AddBtn.Enabled = false;
             EditBtn.Enabled = false;
+            CancelBtn.Enabled = true;
             ButtonInterfaces.EnableFields(true);
 
         }

@@ -8,6 +8,7 @@ using System.ComponentModel;
 
 
 
+
 namespace Storage
 {
 
@@ -22,6 +23,16 @@ namespace Storage
         public static List<CombatRecord> CombatList = new List<CombatRecord>();
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         private static int Experience = 0;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public static List<SkillType> Skills = new List<SkillType>();
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public static List<int> ModScores = new List<int>();
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public static List<int> AbilityMod = new List<int>();
+
+
+
 
 
         private static int[] slowPace = { 3000, 7500, 14000, 23000, 35000, 53000, 77000, 115000, 160000, 235000, 330000, 475000, 665000, 955000, 1350000, 1900000, 2700000, 3850000, 5350000 };
@@ -92,5 +103,9 @@ namespace Storage
     public enum Pace
     {
         Slow, Medium, Fast
+    }
+    public enum Mod
+    {
+        STR, DEX, CON, INT, WIS, CHA
     }
 }

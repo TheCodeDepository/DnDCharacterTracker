@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainFormControls\CharacterStats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainFormControls\CharacterStats.Designer.cs">
+      <DependentUpon>CharacterStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFormControls\CombatPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MainFormControls\CharacterStats.resx">
+      <DependentUpon>CharacterStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFormControls\CombatPreview.resx">
       <DependentUpon>CombatPreview.cs</DependentUpon>
     </EmbeddedResource>

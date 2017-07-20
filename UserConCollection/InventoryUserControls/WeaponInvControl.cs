@@ -21,10 +21,6 @@ namespace UserConCollection.InventoryUserControls
         }
 
 
-        //Events
-
-
-
 
         //Fields
 
@@ -49,10 +45,9 @@ namespace UserConCollection.InventoryUserControls
         }
         private void ForceNum(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
         }
 
 
@@ -76,6 +71,7 @@ namespace UserConCollection.InventoryUserControls
             }
 
         }
+
         public bool SaveRecord()
         {
             if (Asterisks.Count > 0)
@@ -100,17 +96,17 @@ namespace UserConCollection.InventoryUserControls
                 InventoryList.Add(new WeaponItem(ItemIDTb, CostTB, WeightTb, NotesTb, DamageTb, CriticalTb, RangeTb, UpgradesTb));
 
             }
-            AddBtnEnable(true);
             LoadList();
             ClearFields();
-            //EnableDisable();
+
             return true;
         }
+
         public bool DataLoss()
         {
             var CurrentFields = new WeaponItem(ItemIDTb, CostTB, WeightTb, NotesTb, DamageTb, CriticalTb, RangeTb, UpgradesTb);
             if (CurrentRecord > 0)
-            {               
+            {
                 return !Equals(CurrentFields, this);
             }
             else
@@ -137,20 +133,20 @@ namespace UserConCollection.InventoryUserControls
             }
             return false;
         }
+
         public void RemoveRecord()
         {
             var q = InventoryList.FindIndex(p => p.Key == CurrentRecord);
             InventoryList.RemoveAt(q);
             LoadList();
-        }        
+        }
+
         public void EditRecord()
         {
-            SaveBtnEnable(true);
-            EditBtnEnable(false);
-            AddBtnEnable(false);
             LoadSelectedRecord();
-            EnableFields(true);            
+            EnableFields(true);
         }
+
         public void ClearFields()
         {
             foreach (var item in FieldsPanel.Controls)
@@ -168,6 +164,7 @@ namespace UserConCollection.InventoryUserControls
                 }
             }
         }
+
         bool tf = true;
         public void SampleInput()
         {
@@ -183,7 +180,7 @@ namespace UserConCollection.InventoryUserControls
                 WeightTb.Text = "20";
                 UpgradesTb.Text = "Masterpiece, Something else, textextextextext";
                 NotesTb.Text = "test";
-                
+
 
             }
             else
@@ -196,7 +193,7 @@ namespace UserConCollection.InventoryUserControls
                 WeightTb.Text = "20";
                 UpgradesTb.Text = "Masterpiece, Something else, textextextextext";
                 NotesTb.Text = "test";
-                
+
 
             }
         }
@@ -237,34 +234,35 @@ namespace UserConCollection.InventoryUserControls
         {
             EditBtnEnable = Method;
         }
-        Action<bool> SaveBtnEnable;
-        public void SubscribeSave(Action<bool> Method)
-        {
-            SaveBtnEnable = Method;
-        }
-        Action<bool> AddBtnEnable;
-        public void SubscribeAdd(Action<bool> Method)
-        {
-            AddBtnEnable = Method;
-        }
+        //Action<bool> SaveBtnEnable;
+        //public void SubscribeSave(Action<bool> Method)
+        //{
+        //    SaveBtnEnable = Method;
+        //}
+        //Action<bool> AddBtnEnable;
+        //public void SubscribeAdd(Action<bool> Method)
+        //{
+        //    AddBtnEnable = Method;
+        //}
         Action<bool> RemoveBtnEnable;
         public void SubscribeRemove(Action<bool> Method)
         {
             RemoveBtnEnable = Method;
         }
-        Action<bool> SampleBtnEnable;
-        public void SampleRemove(Action<bool> Method)
-        {
-            SampleBtnEnable = Method;
-        }
+        //Action<bool> SampleBtnEnable;
+        //public void SampleRemove(Action<bool> Method)
+        //{
+        //    SampleBtnEnable = Method;
+        //}
 
 
         //Functions
 
         private void LoadList()
         {
+            
             CurrentListKeys.Clear();
-            WeaponListBox.Items.Clear();  
+            WeaponListBox.Items.Clear();
             var q = InventoryList.Where(p => p is WeaponItem);
             foreach (var item in q.ToList())
             {
@@ -304,7 +302,7 @@ namespace UserConCollection.InventoryUserControls
                 NotesTb.Text = i.Notes;
 
             }
-        } 
+        }
 
         //Input Validation
 

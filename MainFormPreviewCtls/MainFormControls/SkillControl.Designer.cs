@@ -128,11 +128,11 @@
             this.RankTb.Location = new System.Drawing.Point(185, 1);
             this.RankTb.Margin = new System.Windows.Forms.Padding(2);
             this.RankTb.Name = "RankTb";
-            this.RankTb.ReadOnly = true;
             this.RankTb.Size = new System.Drawing.Size(23, 23);
             this.RankTb.TabIndex = 326;
             this.RankTb.Text = "0";
             this.RankTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.RankTb.TextChanged += new System.EventHandler(this.ModTb_TextChanged);
             this.RankTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ModTb_KeyPress);
             // 
             // SkillControl

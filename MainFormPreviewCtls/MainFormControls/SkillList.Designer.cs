@@ -36,9 +36,7 @@
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
             this.ListPanel = new System.Windows.Forms.Panel();
-            this.skillControl1 = new MainFormPreviewCtls.SkillControl();
             this.MngInvButton = new System.Windows.Forms.Button();
-            this.ListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label157
@@ -91,7 +89,7 @@
             this.label117.Text = "Total";
             this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // ListPanel
             // 
             this.ListPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -99,22 +97,10 @@
             this.ListPanel.AutoScroll = true;
             this.ListPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ListPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ListPanel.Controls.Add(this.skillControl1);
             this.ListPanel.Location = new System.Drawing.Point(3, 39);
-            this.ListPanel.Name = "panel1";
+            this.ListPanel.Name = "ListPanel";
             this.ListPanel.Size = new System.Drawing.Size(415, 200);
             this.ListPanel.TabIndex = 360;
-            // 
-            // skillControl1
-            // 
-            this.skillControl1.AbilityModifier = -5;
-            this.skillControl1.AbilityModType = "DEX:";
-            this.skillControl1.Location = new System.Drawing.Point(3, 2);
-            this.skillControl1.Name = "skillControl1";
-            this.skillControl1.RankTextBox = 0;
-            this.skillControl1.Size = new System.Drawing.Size(381, 25);
-            this.skillControl1.SkilName = "Knowledge (dungeoneering)";
-            this.skillControl1.TabIndex = 0;
             // 
             // MngInvButton
             // 
@@ -128,6 +114,7 @@
             this.MngInvButton.TabIndex = 361;
             this.MngInvButton.Text = "Manage";
             this.MngInvButton.UseVisualStyleBackColor = true;
+            this.MngInvButton.Click += new System.EventHandler(this.MngInvButton_Click);
             // 
             // SkillList
             // 
@@ -142,7 +129,6 @@
             this.Controls.Add(this.label117);
             this.Name = "SkillList";
             this.Size = new System.Drawing.Size(421, 242);
-            this.ListPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -154,7 +140,6 @@
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.Panel ListPanel;
-        private SkillControl skillControl1;
         private System.Windows.Forms.Button MngInvButton;
     }
 }
